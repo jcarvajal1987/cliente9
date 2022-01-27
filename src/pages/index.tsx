@@ -3,7 +3,8 @@ import React from "react"
 export default function Home() {
   return (
     <>
-      <main>
+      <div>holo home</div>
+      {/*<main>
         <div
           className="relative flex items-center content-center justify-center pt-16 pb-32"
           style={{
@@ -544,8 +545,8 @@ export default function Home() {
                         Message
                       </label>
                       <textarea
-                        rows="4"
-                        cols="80"
+                        row="4"
+                        col="80"
                         className="w-full px-3 py-3 text-sm text-gray-700 placeholder-gray-400 bg-white border-0 rounded shadow focus:outline-none focus:ring"
                         placeholder="Type a message..."
                       />
@@ -565,7 +566,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+      </main>*/}
     </>
   )
 }
