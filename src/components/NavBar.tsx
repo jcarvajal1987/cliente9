@@ -34,20 +34,14 @@ export const NavBar = () => {
               <ul className="flex flex-col list-none lg:flex-row lg:ml-auto">
                 <li className="nav-item">
                   <Link href="/">
-                    <a
-                      className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                      href="#pablo"
-                    >
+                    <a className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
                       Discover
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/contact">
-                    <a
-                      className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                      href="#pablo"
-                    >
+                    <a className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
                       Profile
                     </a>
                   </Link>
