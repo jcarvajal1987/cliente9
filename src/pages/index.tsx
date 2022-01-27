@@ -1,99 +1,67 @@
 import React from "react"
 
-import Head from "next/head"
-import Link from "next/link"
-
 export default function Home() {
+  const [menuOpen, setMenuOpen] = React.useState(false)
   return (
-    <div>
-      <Head>
-        <title>Next.js advanced start template.</title>
-
-        <meta
-          name="description"
-          content="Use tailwind css, eslint, prettier & absolute imports instantly.
-            Easily extendable zero-config template for pros and beginners."
-        />
-
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex justify-center min-h-screen py-20 bg-gradient-to-b from-gray-50 via-gray-50 to-gray-100">
-        <div>
-          <h1 className="px-5 text-4xl font-bold leading-tight tracking-tight text-center sm:mt-4 sm:text-6xl">
-            Next.js
-            <br />
-            Advanced Starter
-          </h1>
-
-          <h2 className="max-w-4xl px-10 mx-auto mt-8 text-base tracking-tight text-center text-gray-600 sm:text-2xl md:mt-5 md:text-2xl">
-            Tailwind CSS 2.0, ESLint & Prettier without a single line of config!
-            Easily extendable zero-config template for pros and beginners.
-          </h2>
-
-          <div className="px-4 sm:px-0">
-            <section
-              className="w-full mt-6 bg-white rounded-lg grid grid-cols-1 sm:mt-20 sm:grid-cols-2 sm:min-w-[1000px] min-h-[350px]"
-              style={{
-                boxShadow: "rgba(0, 0, 0, 0.12) 0px 30px 60px 0px",
-              }}
-            >
-              <div className="flex flex-col justify-center rounded-l-lg bg-gray-50">
-                <FeatureList>
-                  <Feature main="Tailwind CSS">
-                    Fast design workflow with <InfoText text="Tailwind CSS" />
-                  </Feature>
-
-                  <Feature main="TypeScript">
-                    <InfoText text="TypeScript" /> by default
-                  </Feature>
-
-                  <Feature main="ESLint config">
-                    Customizable <InfoText text="ESLint config" />
-                  </Feature>
-
-                  <Feature main="Code formatting">
-                    <InfoText text="Code formatting" /> with Prettier
-                  </Feature>
-
-                  <Feature main="Absolute imports">
-                    Standardized <InfoText text="absolute imports" />
-                  </Feature>
-
-                  <Feature main="Absolute imports">
-                    Ready-to-go <InfoText text="Jest" /> setup
-                  </Feature>
-                </FeatureList>
+    <>
+      <div className="flex flex-wrap py-2">
+        <div className="w-full px-4">
+          <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 rounded">
+            <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
+              <div className="relative flex justify-between w-full px-4 lg:w-auto lg:static lg:block lg:justify-start">
+                <a
+                  className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase whitespace-nowrap"
+                  href="#pablo"
+                >
+                  pink Starter Menu
+                </a>
+                <button
+                  className="block px-3 py-1 text-xl leading-none text-white bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
+                  type="button"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                >
+                  <i className="fas fa-bars">kyo</i>
+                </button>
               </div>
-
-              <div className="px-4 py-24 text-center space-y-5 place-self-center">
-                <h3 className="text-3xl font-bold">Get it 👇</h3>
-
-                <span className="inline-flex rounded-md shadow-sm">
-                  <Link href="https://github.com/agcty/nextjs-advanced-starter">
-                    <a
-                      type="button"
-                      className="inline-flex items-center px-4 py-4 font-medium text-white bg-blue-600 border border-transparent leading-6 transition duration-150 ease-in-out rounded-md sm:px-10 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring-blue-400 active:bg-blue-700 focus:ring-4"
-                    >
-                      Copy Template from GitHub
-                    </a>
-                  </Link>
-                </span>
-              </div>
-            </section>
-            <p className="mt-6 text-xs font-medium text-center text-gray-600">
-              Built by{" "}
-              <a
-                className="font-medium text-blue-600 transition duration-150 ease-in-out hover:text-blue-500 focus:outline-none focus:underline"
-                href="https://twitter.com/agctyz"
+              <div
+                className={
+                  "lg:flex flex-grow items-center" +
+                  (menuOpen ? " flex" : " hidden")
+                }
+                id="example-navbar-info"
               >
-                @agctyz
-              </a>
-            </p>
-          </div>
+                <ul className="flex flex-col list-none lg:flex-row lg:ml-auto">
+                  <li className="nav-item">
+                    <a
+                      className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      href="#pablo"
+                    >
+                      Discover
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      href="#pablo"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                      href="#pablo"
+                    >
+                      Settings
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   )
 }
 
