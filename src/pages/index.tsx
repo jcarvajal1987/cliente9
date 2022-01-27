@@ -545,8 +545,8 @@ export default function Home() {
                         Message
                       </label>
                       <textarea
-                        row="4"
-                        col="80"
+                        //row="4"
+                        //col="80"
                         className="w-full px-3 py-3 text-sm text-gray-700 placeholder-gray-400 bg-white border-0 rounded shadow focus:outline-none focus:ring"
                         placeholder="Type a message..."
                       />
