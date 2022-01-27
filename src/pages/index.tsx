@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div>holo home</div>
-      {/*<main>
+      <main>
         <div
           className="relative flex items-center content-center justify-center pt-16 pb-32"
           style={{
@@ -566,7 +566,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>*/}
+      </main>
     </>
   )
 }
