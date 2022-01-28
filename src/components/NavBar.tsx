@@ -3,62 +3,156 @@ import React from "react"
 import Link from "next/link"
 
 export const NavBar = () => {
-  const [menuOpen, setMenuOpen] = React.useState(false)
+  const [navbarOpen, setNavbarOpen] = React.useState(false)
+  const transparent = true
   return (
-    <div className="flex flex-wrap py-2">
-      <div className="w-full px-4">
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 rounded">
-          <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
-            <div className="relative flex justify-between w-full px-4 lg:w-auto lg:static lg:block lg:justify-start">
+    <nav
+      className={
+        (transparent
+          ? "top-0 absolute z-50 w-full"
+          : "relative shadow-lg bg-white shadow-lg") +
+        " flex flex-wrap items-center justify-between px-2 py-3 "
+      }
+    >
+      <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
+        <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
+          <Link href="/">
+            <a
+              className={
+                (transparent ? "text-white" : "text-gray-800") +
+                " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+              }
+            >
+              Tailwind Starter Kit
+            </a>
+          </Link>
+          <button
+            className="block px-3 py-1 text-xl leading-none bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <i
+              className={
+                (transparent ? "text-white" : "text-gray-800") + " fas fa-bars"
+              }
+            >
+              X
+            </i>
+          </button>
+        </div>
+        <div
+          className={
+            "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none" +
+            (navbarOpen ? " block rounded shadow-lg" : " hidden")
+          }
+          id="example-navbar-warning"
+        >
+          <ul className="flex flex-col mr-auto list-none lg:flex-row">
+            <li className="flex items-center">
+              <Link href="/dashboard">
+                <a
+                  className={
+                    (transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                >
+                  <i
+                    className={
+                      (transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500") +
+                      " far fa-file-alt text-lg leading-lg mr-2"
+                    }
+                  />{" "}
+                  Docs
+                </a>
+              </Link>
+            </li>
+          </ul>
+          <ul className="flex flex-col list-none lg:flex-row lg:ml-auto">
+            <li className="flex items-center">
               <a
-                className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase whitespace-nowrap"
+                className={
+                  (transparent
+                    ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                    : "text-gray-800 hover:text-gray-600") +
+                  " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                }
                 href="#pablo"
               >
-                pink Starter Menu
+                <i
+                  className={
+                    (transparent
+                      ? "lg:text-gray-300 text-gray-500"
+                      : "text-gray-500") +
+                    " fab fa-facebook text-lg leading-lg "
+                  }
+                />
+                <span className="inline-block ml-2 lg:hidden">Share</span>
               </a>
-              <button
-                className="block px-3 py-1 text-xl leading-none text-white bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
-                type="button"
-                onClick={() => setMenuOpen(!menuOpen)}
+            </li>
+
+            <li className="flex items-center">
+              <a
+                className={
+                  (transparent
+                    ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                    : "text-gray-800 hover:text-gray-600") +
+                  " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                }
+                href="#pablo"
               >
-                <i className="fas fa-bars">kyo</i>
+                <i
+                  className={
+                    (transparent
+                      ? "lg:text-gray-300 text-gray-500"
+                      : "text-gray-500") + " fab fa-twitter text-lg leading-lg "
+                  }
+                />
+                <span className="inline-block ml-2 lg:hidden">Tweet</span>
+              </a>
+            </li>
+
+            <li className="flex items-center">
+              <a
+                className={
+                  (transparent
+                    ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                    : "text-gray-800 hover:text-gray-600") +
+                  " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                }
+                href="#pablo"
+              >
+                <i
+                  className={
+                    (transparent
+                      ? "lg:text-gray-300 text-gray-500"
+                      : "text-gray-500") + " fab fa-github text-lg leading-lg "
+                  }
+                />
+                <span className="inline-block ml-2 lg:hidden">Star</span>
+              </a>
+            </li>
+
+            <li className="flex items-center">
+              <button
+                className={
+                  (transparent
+                    ? "bg-white text-gray-800 active:bg-gray-100"
+                    : "bg-pink-500 text-white active:bg-pink-600") +
+                  " text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+                }
+                type="button"
+                style={{ transition: "all .15s ease" }}
+              >
+                <i className="fas fa-arrow-alt-circle-down"></i> Download
               </button>
-            </div>
-            <div
-              className={
-                "lg:flex flex-grow items-center" +
-                (menuOpen ? " flex" : " hidden")
-              }
-              id="example-navbar-info"
-            >
-              <ul className="flex flex-col list-none lg:flex-row lg:ml-auto">
-                <li className="nav-item">
-                  <Link href="/">
-                    <a className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
-                      Discover
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/contact">
-                    <a className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
-                      Profile
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                    href="#pablo"
-                  >
-                    Settings
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   )
 }
