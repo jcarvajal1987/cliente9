@@ -1,8 +1,49 @@
 import React from "react"
 
+import { motion } from "framer-motion"
+
 export default function Dasboard() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0,
+        delayChildren: 1,
+        staggerChildren: 0.09,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        delay: 0.2,
+        staggerChildren: 0.09,
+      },
+    },
+  }
+  const item = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        delay: 0.5,
+      },
+    },
+  }
   return (
-    <>
+    <motion.main
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      key={2}
+    >
       {/*<Sidebar />*/}
       <div className="relative md:ml-64 bg-blueGray-100">
         {/*<Navbar />*/}
@@ -463,6 +504,6 @@ export default function Dasboard() {
           </footer>
         </div>
       </div>
-    </>
+    </motion.main>
   )
 }

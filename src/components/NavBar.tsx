@@ -51,6 +51,7 @@ export const NavBar = () => {
             <li className="flex items-center">
               <Link href="/dashboard">
                 <a
+                  onClick={() => setNavbarOpen(!navbarOpen)}
                   className={
                     (transparent
                       ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
