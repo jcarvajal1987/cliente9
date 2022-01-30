@@ -2,7 +2,6 @@ import React from "react"
 
 import { AnimatePresence } from "framer-motion"
 import { AppProps } from "next/app"
-
 import "../styles/tailwind.scss"
 import { useRouter } from "next/router"
 
