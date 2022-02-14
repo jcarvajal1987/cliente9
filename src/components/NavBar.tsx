@@ -1,15 +1,28 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import Link from "next/link"
 
-export const NavBar = () => {
+export const NavBar = (props) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
-  const transparent = true
+  const [transparent, setTransparent] = React.useState(true)
+  const router = props.router
+
+  useEffect(() => {
+    switch (true) {
+      case router == "/dashboard":
+        setTransparent(false)
+        break
+      case router == "/":
+        setTransparent(true)
+        break
+    }
+  }, [router])
+
   return (
     <nav
       className={
         (transparent
-          ? "top-0 absolute z-50 w-full"
+          ? "relative z-50 w-full"
           : "relative shadow-lg bg-white shadow-lg") +
         " flex flex-wrap items-center justify-between px-2 py-3 "
       }

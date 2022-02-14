@@ -2,7 +2,14 @@ import React from "react"
 
 import { motion } from "framer-motion"
 
+import { Carousel } from "./Carousel"
+
 export default function LandingPage() {
+  const images = [
+    "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+  ]
+
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
@@ -46,25 +53,15 @@ export default function LandingPage() {
       animate="show"
       exit="exit"
       key={1}
+      className="absolute top-0 w-full h-full bg-center bg-cover"
     >
       <div
         className="relative flex items-center content-center justify-center pt-16 pb-32"
         style={{
-          minHeight: "75vh",
+          minHeight: "100vh",
         }}
       >
-        <div
-          className="absolute top-0 w-full h-full bg-center bg-cover"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
-          }}
-        >
-          <span
-            id="blackOverlay"
-            className="absolute w-full h-full bg-black opacity-75"
-          ></span>
-        </div>
+        <Carousel images={images} autoPlay={true} showButtons={true} />
         <div className="container relative mx-auto">
           <div className="flex flex-wrap items-center">
             <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">

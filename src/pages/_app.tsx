@@ -9,9 +9,20 @@ import { NavBar } from "@components/NavBar"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter()
+
+  //useEffect(() => {
+  //  console.log(router)
+  //  if (router !== "/dashboard") {
+  //    setTransparent(true)
+  //  }
+  //  if (router !== "/") {
+  //    setTransparent(false)
+  //  }
+  //}, [router])
+
   return (
     <>
-      <NavBar />
+      <NavBar router={router.pathname} />
       <AnimatePresence exitBeforeEnter>
         <Component key={router.route} {...pageProps} />
       </AnimatePresence>
