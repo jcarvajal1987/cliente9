@@ -7,16 +7,16 @@ import { Carousel } from "./Carousel"
 export default function LandingPage() {
   const images = [
     {
+      type: "heading1",
       url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
-      title: "Your story starts with us.",
-      description:
-        "This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.",
+      title: "DESCUBRE.",
+      description: "Somos Desarrolladores.",
     },
     {
+      type: "heading2",
       url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
-      title: "Your story starts with kyo.",
-      description:
-        "kyo is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.",
+      title: "LIDERA.",
+      description: "Somos Creativos.",
     },
   ]
 
