@@ -6,8 +6,18 @@ import { Carousel } from "./Carousel"
 
 export default function LandingPage() {
   const images = [
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+    {
+      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
+      title: "Your story starts with us.",
+      description:
+        "This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      title: "Your story starts with kyo.",
+      description:
+        "kyo is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.",
+    },
   ]
 
   const variants = {
@@ -62,22 +72,7 @@ export default function LandingPage() {
         }}
       >
         <Carousel images={images} autoPlay={true} showButtons={true} />
-        <div className="container relative mx-auto">
-          <div className="flex flex-wrap items-center">
-            <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
-              <div className="">
-                <h1 className="text-5xl font-semibold text-white">
-                  Your story starts with us.
-                </h1>
-                <p className="mt-4 text-lg text-gray-300">
-                  This is a simple example of a Landing Page you can build using
-                  Tailwind Starter Kit. It features multiple CSS components
-                  based on the Tailwindcss design system.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div
           className="absolute bottom-0 left-0 right-0 top-auto w-full overflow-hidden pointer-events-none"
           style={{ height: "70px" }}
