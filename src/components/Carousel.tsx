@@ -21,8 +21,8 @@ export const Carousel = (props) => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 2,
-        staggerChildren: 0.041,
+        delayChildren: 1.2,
+        staggerChildren: 0.05,
         duration: 2,
       },
     },
@@ -41,7 +41,7 @@ export const Carousel = (props) => {
       opacity: 1,
       transition: {
         delay: 2,
-        delayChildren: 2.2,
+        delayChildren: 1.4,
         staggerChildren: 0.041,
         duration: 2,
       },
