@@ -21,7 +21,6 @@ export const Carousel = (props) => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0,
         delayChildren: 2,
         staggerChildren: 0.041,
         duration: 2,
@@ -30,8 +29,28 @@ export const Carousel = (props) => {
     exit: {
       opacity: 0,
       transition: {
-        delay: 0,
         delayChildren: 0,
+        staggerChildren: 0.041,
+        duration: 2,
+      },
+    },
+  }
+  const sentence2 = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 2,
+        delayChildren: 2.2,
+        staggerChildren: 0.041,
+        duration: 2,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        delay: 2,
+        delayChildren: 0.2,
         staggerChildren: 0.041,
         duration: 2,
       },
@@ -61,7 +80,7 @@ export const Carousel = (props) => {
       opacity: 1,
       transition: {
         delay: 0,
-        delayChildren: 2,
+        delayChildren: 0,
         staggerChildren: 0.3,
         duration: 2,
       },
@@ -73,6 +92,27 @@ export const Carousel = (props) => {
         staggerChildren: 0.2,
         delayChildren: 2,
         duration: 2,
+      },
+    },
+  }
+  const container2 = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0,
+        delayChildren: 0,
+        staggerChildren: 2,
+        duration: 0,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        delay: 0,
+        staggerChildren: 0,
+        delayChildren: 0,
+        duration: 0,
       },
     },
   }
@@ -89,7 +129,6 @@ export const Carousel = (props) => {
   const selectNewImage = (index: number, images: string[], next = true) => {
     setLoaded(false)
     setTimeout(() => {
-      setLoaded(true)
       const condition = next
         ? selectedIndex < images.length - 1
         : selectedIndex > 0
@@ -100,9 +139,14 @@ export const Carousel = (props) => {
         : condition
         ? selectedIndex - 1
         : images.length - 1
-      setSelectedImage(images[nextIndex])
+      setTimeout(() => {
+        setSelectedImage(images[nextIndex])
+      }, 1000)
+      setTimeout(() => {
+        setLoaded(true)
+      }, 1500)
       setSelectedIndex(nextIndex)
-    }, 500)
+    }, 0)
   }
 
   const previous = () => {
@@ -127,7 +171,8 @@ export const Carousel = (props) => {
           exit="exit"
           key={selectedImage.url}
           className="absolute top-0 w-full h-full bg-center bg-cover"
-        >
+        ></motion.div>
+        <div className="absolute top-0 w-full h-full bg-center bg-cover">
           <span
             id="blackOverlay"
             className="absolute w-full h-full bg-black opacity-75"
@@ -149,6 +194,7 @@ export const Carousel = (props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
+                        key={selectedImage.title}
                       >
                         {selectedImage.title.split("").map((char, index) => {
                           return (
@@ -163,10 +209,12 @@ export const Carousel = (props) => {
                         })}
                       </motion.h3>
                       <motion.h3
-                        variants={sentence}
+                        variants={sentence2}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
+                        transition={{ delay: 2 }}
+                        key={selectedImage.description}
                       >
                         {selectedImage.description
                           .split("")
@@ -188,7 +236,7 @@ export const Carousel = (props) => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </AnimatePresence>
       <button style={{ zIndex: 4 }} onClick={previous}>
         {"<"}
