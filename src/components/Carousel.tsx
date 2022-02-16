@@ -11,7 +11,7 @@ export const Carousel = (props) => {
     if (props.autoPlay || !props.showButtons) {
       const interval = setInterval(() => {
         selectNewImage(selectedIndex, props.images)
-      }, 8000)
+      }, 6000)
       return () => clearInterval(interval)
     }
   })
