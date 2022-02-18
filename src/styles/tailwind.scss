@@ -8,5 +8,19 @@
 /* purgecss start ignore */
 
 
-  
+@keyframes example {
+    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:top center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:top center 0px ;}
+  }
 
+.transition01{
+
+
+    animation-name: example;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;}

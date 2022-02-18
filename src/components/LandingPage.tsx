@@ -8,7 +8,7 @@ export default function LandingPage() {
   const images = [
     {
       type: "heading1",
-      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
+      url: "https://skrollex.x40.ru/theme-viki/images/bg/THOR/2957945058_776e384907_o-m.jpg",
       title: "DESCUBRE.",
       description: "Somos Desarrolladores.",
     },
@@ -66,9 +66,11 @@ export default function LandingPage() {
       className="absolute top-0 w-full h-full bg-center bg-cover"
     >
       <div
-        className="relative flex items-center content-center justify-center pt-16 pb-32"
+        className="relative flex  overflow-hidden"
         style={{
           minHeight: "100vh",
+          minWidth: "100%",
+          maxHeight: "100vh",
         }}
       >
         <Carousel images={images} autoPlay={true} showButtons={true} />
@@ -94,7 +96,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <section className="pb-20 -mt-24 bg-gray-300">
+      <section className="pb-20  bg-gray-300">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={container}

@@ -162,16 +162,20 @@ export const Carousel = (props) => {
       {/*<img src={selectedImage} />*/}
       <AnimatePresence>
         <motion.div
-          style={{
-            backgroundImage: `url(${selectedImage.url})`,
-          }}
           variants={container}
           initial="hidden"
           animate="show"
           exit="exit"
           key={selectedImage.url}
-          className="absolute top-0 w-full h-full bg-center bg-cover"
-        ></motion.div>
+          className="absolute flex"
+          style={{
+            minHeight: "100vh",
+            minWidth: "100%",
+            maxHeight: "100vh",
+          }}
+        >
+          <img src={selectedImage.url} className="bg" alt="" />
+        </motion.div>
         <div className="absolute top-0 w-full h-full bg-center bg-cover">
           <span
             id="blackOverlay"
@@ -182,7 +186,7 @@ export const Carousel = (props) => {
             style={{
               minHeight: "100vh",
             }}
-            className="relative flex items-center content-center justify-center pt-16 pb-32"
+            className="relative flex items-center content-center justify-center pt-16 pb-32 "
           >
             <div className="flex flex-wrap items-center">
               <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
