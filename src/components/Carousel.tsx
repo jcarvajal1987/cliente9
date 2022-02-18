@@ -174,7 +174,7 @@ export const Carousel = (props) => {
             maxHeight: "100vh",
           }}
         >
-          <img src={selectedImage.url} className="bg" alt="" />
+          <img src={selectedImage.url} className="bg transition1" alt="" />
         </motion.div>
         <div className="absolute top-0 w-full h-full bg-center bg-cover">
           <span
