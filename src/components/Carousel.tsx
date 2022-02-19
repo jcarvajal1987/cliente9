@@ -21,16 +21,16 @@ export const Carousel = (props) => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 1.2,
+        delayChildren: 1,
         staggerChildren: 0.05,
         duration: 2,
       },
     },
     exit: {
-      opacity: 0,
+      opacity: 1,
       transition: {
         delayChildren: 0,
-        staggerChildren: 0.041,
+        staggerChildren: 0.05,
         duration: 2,
       },
     },
@@ -40,16 +40,14 @@ export const Carousel = (props) => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 2,
-        delayChildren: 1.4,
+        delayChildren: 1.2,
         staggerChildren: 0.041,
         duration: 2,
       },
     },
     exit: {
-      opacity: 0,
+      opacity: 1,
       transition: {
-        delay: 2,
         delayChildren: 0.2,
         staggerChildren: 0.041,
         duration: 2,
@@ -57,14 +55,12 @@ export const Carousel = (props) => {
     },
   }
   const letter = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
     },
     exit: {
       opacity: 0,
-      y: 50,
     },
   }
 
@@ -106,15 +102,6 @@ export const Carousel = (props) => {
         duration: 0,
       },
     },
-    exit: {
-      opacity: 0,
-      transition: {
-        delay: 0,
-        staggerChildren: 0,
-        delayChildren: 0,
-        duration: 0,
-      },
-    },
   }
   const item = {
     hidden: { opacity: 0 },
@@ -141,7 +128,7 @@ export const Carousel = (props) => {
         : images.length - 1
       setTimeout(() => {
         setSelectedImage(images[nextIndex])
-      }, 1000)
+      }, 500)
       setTimeout(() => {
         setLoaded(true)
       }, 1500)
@@ -167,14 +154,12 @@ export const Carousel = (props) => {
           animate="show"
           exit="exit"
           key={selectedImage.url}
-          className="absolute flex"
+          className="absolute top-0 w-full h-full bg transition01"
           style={{
-            minHeight: "100vh",
-            minWidth: "100%",
-            maxHeight: "100vh",
+            backgroundImage: `url(${selectedImage.url})`,
           }}
         >
-          <img src={selectedImage.url} className="bg transition01" alt="" />
+          {/*<img src={selectedImage.url} className="bg transition01" alt="" />*/}
         </motion.div>
         <div className="absolute top-0 w-full h-full bg-center bg-cover">
           <span
@@ -217,7 +202,6 @@ export const Carousel = (props) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        transition={{ delay: 2 }}
                         key={selectedImage.description}
                       >
                         {selectedImage.description

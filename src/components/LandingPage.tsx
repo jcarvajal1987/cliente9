@@ -8,7 +8,7 @@ export default function LandingPage() {
   const images = [
     {
       type: "heading1",
-      url: "https://skrollex.x40.ru/theme-viki/images/bg/THOR/2957945058_776e384907_o-m.jpg",
+      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
       title: "DESCUBRE.",
       description: "Somos Desarrolladores.",
     },
@@ -96,7 +96,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <section className="pb-20  bg-gray-300">
+      <section className="pb-20 -mt-16 bg-gray-300">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={container}
