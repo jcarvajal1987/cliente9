@@ -96,7 +96,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <section className="pb-20 -mt-16 bg-gray-300">
+      <section className="pb-20  bg-gray-300">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={container}

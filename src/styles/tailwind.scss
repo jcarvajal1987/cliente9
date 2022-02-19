@@ -8,19 +8,40 @@
 /* purgecss start ignore */
 
 
-@keyframes example {
-    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:top center 0px;}
-    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:top center 0px ;}
+@keyframes example1 {
+    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:right center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:right center 0px ;}
+  }
+@keyframes example2 {
+    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px ;}
+  }
+@keyframes example3 {
+    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:right center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:right center 0px ;}
+  }
+@keyframes example4 {
+    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px ;}
   }
 
-.transition01{
-
-
-    animation-name: example;
+.transition{
     animation-duration: 9s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+.transition01{
+    animation-name: example1;
+}
+.transition02{
+    animation-name: example2;
+}
+.transition03{
+    animation-name: example3;
+}
+.transition04{
+    animation-name: example4;
 }
 
 .bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;background-size:cover;background-position: center;}

@@ -16,6 +16,35 @@ export const Carousel = (props) => {
     }
   })
 
+  const [path, setPath] = useState("transition01")
+
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 4) + 1
+  }
+
+  function defineImgPath(result) {
+    switch (result) {
+      case 1:
+        setPath("transition01")
+        break
+      case 2:
+        setPath("transition02")
+        break
+      case 3:
+        setPath("transition03")
+        break
+      case 4:
+        setPath("transition04")
+        break
+    }
+  }
+
+  const rollDice = () => {
+    const result = generateRandomNumber()
+    defineImgPath(result)
+    console.log(path)
+  }
+
   const sentence = {
     hidden: { opacity: 1 },
     visible: {
@@ -49,18 +78,20 @@ export const Carousel = (props) => {
       opacity: 1,
       transition: {
         delayChildren: 0.2,
-        staggerChildren: 0.041,
+        staggerChildren: 0.05,
         duration: 2,
       },
     },
   }
   const letter = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, rotateY: -90 },
     visible: {
       opacity: 1,
+      rotateY: 0,
     },
     exit: {
       opacity: 0,
+      rotateY: -90,
     },
   }
 
@@ -128,6 +159,7 @@ export const Carousel = (props) => {
         : images.length - 1
       setTimeout(() => {
         setSelectedImage(images[nextIndex])
+        rollDice()
       }, 500)
       setTimeout(() => {
         setLoaded(true)
@@ -154,7 +186,7 @@ export const Carousel = (props) => {
           animate="show"
           exit="exit"
           key={selectedImage.url}
-          className="absolute top-0 w-full h-full bg transition01"
+          className={`absolute top-0 w-full h-full bg transition ${path}`}
           style={{
             backgroundImage: `url(${selectedImage.url})`,
           }}
@@ -203,13 +235,14 @@ export const Carousel = (props) => {
                         animate="visible"
                         exit="exit"
                         key={selectedImage.description}
+                        className="flex"
                       >
                         {selectedImage.description
                           .split("")
                           .map((char, index) => {
                             return (
                               <motion.span
-                                className="mt-4 text-lg text-gray-300"
+                                className="block mt-4 text-lg text-gray-300"
                                 key={char + "-" + index}
                                 variants={letter}
                               >
