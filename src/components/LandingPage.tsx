@@ -8,14 +8,14 @@ export default function LandingPage() {
   const images = [
     {
       type: "heading1",
-      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
+      url: "./bg_1.webp",
       title: "DESCUBRE.",
       description: "Somos Desarrolladores.",
       transition: "transition03",
     },
     {
       type: "heading2",
-      url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      url: "bg_2.webp",
       title: "LIDERA.",
       description: "Somos Creativos.",
       transition: "transition01",
@@ -85,35 +85,28 @@ export default function LandingPage() {
       key={1}
       className="absolute top-0 w-full h-full bg-center bg-cover"
     >
-      <div
-        className="relative flex  overflow-hidden"
-        style={{
-          minHeight: "100vh",
-          minWidth: "100%",
-          maxHeight: "100vh",
-        }}
-      >
-        <Carousel images={images} autoPlay={true} showButtons={true} />
+      <div className="relative h-full truncate">
+        <Carousel images={images} autoPlay={false} showButtons={true} />
+      </div>
 
-        <div
-          className="absolute bottom-0 left-0 right-0 top-auto w-full overflow-hidden pointer-events-none"
-          style={{ height: "70px" }}
+      <div
+        className="absolute bottom-0 left-0 right-0 top-auto w-full overflow-hidden pointer-events-none"
+        style={{ height: "70px" }}
+      >
+        <svg
+          className="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
         >
-          <svg
-            className="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="text-gray-300 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
+          <polygon
+            className="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
       </div>
 
       <section className="pb-20  bg-gray-300">

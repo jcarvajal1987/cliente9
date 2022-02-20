@@ -8,9 +8,17 @@
 /* purgecss start ignore */
 
 
+.primary{
+  color: #003e6f;
+}
+.title01{
+  font-weight:900;
+  font-size: 76px;
+}
+
 @keyframes example1 {
-    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:right center 0px;}
-    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:right center 0px ;}
+    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:center center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:center center 0px ;}
   }
 @keyframes example2 {
     from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px;}

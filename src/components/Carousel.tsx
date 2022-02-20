@@ -153,20 +153,15 @@ export const Carousel = (props) => {
       {/*<img src={selectedImage} />*/}
 
       <CarouselImage props={props.images} stateImage={selectedImage} />
-      <div className="absolute top-0 w-full h-full bg-center bg-cover">
+      <div className="relative top-0 flex items-center justify-center w-full h-full">
         <span
           id="blackOverlay"
-          className="absolute w-full h-full bg-black opacity-75"
+          className="absolute w-full h-full bg-black opacity-0"
         ></span>
 
-        <div
-          style={{
-            minHeight: "100vh",
-          }}
-          className="relative flex items-center content-center justify-center pt-16 pb-32 "
-        >
+        <div className="container mx-auto ">
           <div className="flex flex-wrap items-center">
-            <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
+            <div className="w-full px-4 ml-auto mr-auto text-center">
               <AnimatePresence>
                 {loaded && (
                   <>
@@ -180,7 +175,7 @@ export const Carousel = (props) => {
                       {selectedImage.title.split("").map((char, index) => {
                         return (
                           <motion.span
-                            className="text-5xl font-semibold text-white"
+                            className="text-5xl font-semibold primary title01"
                             key={char + "-" + index}
                             variants={letter}
                           >
