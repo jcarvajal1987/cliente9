@@ -45,6 +45,24 @@ export default function LandingPage() {
       },
     },
   }
+  const containerIn = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0,
+        staggerChildren: 0.2,
+        duration: 1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.09,
+        duration: 1,
+      },
+    },
+  }
   const item = {
     hidden: { opacity: 0 },
     show: {
@@ -60,7 +78,7 @@ export default function LandingPage() {
   }
   return (
     <motion.main
-      variants={container}
+      variants={containerIn}
       initial="hidden"
       animate="show"
       exit="exit"

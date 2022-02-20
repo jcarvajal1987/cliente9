@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <NavBar router={router.pathname} />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Component key={router.route} {...pageProps} />
       </AnimatePresence>
     </>
