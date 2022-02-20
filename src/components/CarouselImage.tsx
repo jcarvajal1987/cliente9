@@ -29,13 +29,10 @@ export const CarouselImage = (props) => {
   const rollDice = () => {
     const result = generateRandomNumber()
     defineImgPath(result)
-    console.log(result)
   }
   useEffect(() => {
     rollDice()
   }, [props.props.url])
-
-  console.log(props.props.url)
 
   const container = {
     hidden: { opacity: 0 },
