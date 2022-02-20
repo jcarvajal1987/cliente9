@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
 
+import { CarouselImage } from "./CarouselImage"
+
 export const Carousel = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [selectedImage, setSelectedImage] = useState(props.images[0])
@@ -15,35 +17,6 @@ export const Carousel = (props) => {
       return () => clearInterval(interval)
     }
   })
-
-  const [path, setPath] = useState("transition01")
-
-  const generateRandomNumber = () => {
-    return Math.floor(Math.random() * 4) + 1
-  }
-
-  function defineImgPath(result) {
-    switch (result) {
-      case 1:
-        setPath("transition01")
-        break
-      case 2:
-        setPath("transition02")
-        break
-      case 3:
-        setPath("transition03")
-        break
-      case 4:
-        setPath("transition04")
-        break
-    }
-  }
-
-  const rollDice = () => {
-    const result = generateRandomNumber()
-    defineImgPath(result)
-    console.log(path)
-  }
 
   const sentence = {
     hidden: { opacity: 1 },
@@ -159,7 +132,6 @@ export const Carousel = (props) => {
         : images.length - 1
       setTimeout(() => {
         setSelectedImage(images[nextIndex])
-        rollDice()
       }, 500)
       setTimeout(() => {
         setLoaded(true)
@@ -179,48 +151,58 @@ export const Carousel = (props) => {
   return (
     <>
       {/*<img src={selectedImage} />*/}
-      <AnimatePresence>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          exit="exit"
-          key={selectedImage.url}
-          className={`absolute top-0 w-full h-full bg transition ${path}`}
-          style={{
-            backgroundImage: `url(${selectedImage.url})`,
-          }}
-        >
-          {/*<img src={selectedImage.url} className="bg transition01" alt="" />*/}
-        </motion.div>
-        <div className="absolute top-0 w-full h-full bg-center bg-cover">
-          <span
-            id="blackOverlay"
-            className="absolute w-full h-full bg-black opacity-75"
-          ></span>
 
-          <div
-            style={{
-              minHeight: "100vh",
-            }}
-            className="relative flex items-center content-center justify-center pt-16 pb-32 "
-          >
-            <div className="flex flex-wrap items-center">
-              <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
-                <AnimatePresence>
-                  {loaded && (
-                    <>
-                      <motion.h3
-                        variants={sentence}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        key={selectedImage.title}
-                      >
-                        {selectedImage.title.split("").map((char, index) => {
+      <CarouselImage props={props.images} stateImage={selectedImage} />
+      <div className="absolute top-0 w-full h-full bg-center bg-cover">
+        <span
+          id="blackOverlay"
+          className="absolute w-full h-full bg-black opacity-75"
+        ></span>
+
+        <div
+          style={{
+            minHeight: "100vh",
+          }}
+          className="relative flex items-center content-center justify-center pt-16 pb-32 "
+        >
+          <div className="flex flex-wrap items-center">
+            <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
+              <AnimatePresence>
+                {loaded && (
+                  <>
+                    <motion.h3
+                      variants={sentence}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      key={selectedImage.title}
+                    >
+                      {selectedImage.title.split("").map((char, index) => {
+                        return (
+                          <motion.span
+                            className="text-5xl font-semibold text-white"
+                            key={char + "-" + index}
+                            variants={letter}
+                          >
+                            {char}
+                          </motion.span>
+                        )
+                      })}
+                    </motion.h3>
+                    <motion.h3
+                      variants={sentence2}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      key={selectedImage.description}
+                      className="flex"
+                    >
+                      {selectedImage.description
+                        .split("")
+                        .map((char, index) => {
                           return (
                             <motion.span
-                              className="text-5xl font-semibold text-white"
+                              className="block mt-4 text-lg text-gray-300"
                               key={char + "-" + index}
                               variants={letter}
                             >
@@ -228,37 +210,15 @@ export const Carousel = (props) => {
                             </motion.span>
                           )
                         })}
-                      </motion.h3>
-                      <motion.h3
-                        variants={sentence2}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        key={selectedImage.description}
-                        className="flex"
-                      >
-                        {selectedImage.description
-                          .split("")
-                          .map((char, index) => {
-                            return (
-                              <motion.span
-                                className="block mt-4 text-lg text-gray-300"
-                                key={char + "-" + index}
-                                variants={letter}
-                              >
-                                {char}
-                              </motion.span>
-                            )
-                          })}
-                      </motion.h3>
-                    </>
-                  )}
-                </AnimatePresence>
-              </div>
+                    </motion.h3>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
-      </AnimatePresence>
+      </div>
+
       <button style={{ zIndex: 4 }} onClick={previous}>
         {"<"}
       </button>
