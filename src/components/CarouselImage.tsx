@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
 
-import { AnimatePresence, motion } from "framer-motion"
-
 export const CarouselImage = (props) => {
   const [path, setPath] = useState("transition01")
 
@@ -42,7 +40,7 @@ export const CarouselImage = (props) => {
         delay: 0,
         delayChildren: 0,
         staggerChildren: 0.3,
-        duration: 2,
+        duration: 4,
       },
     },
     exit: {
@@ -51,29 +49,26 @@ export const CarouselImage = (props) => {
         delay: 0,
         staggerChildren: 0.2,
         delayChildren: 2,
-        duration: 2,
+        duration: 4,
       },
     },
   }
+
   return (
-    <AnimatePresence>
-      {props.props
-        .filter((img) => img.url === props.stateImage.url)
-        .map((img, index) => {
-          return (
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="show"
-              exit="exit"
-              key={props.stateImage.url}
-              className={`absolute top-0 w-full h-full bg transition ${img.transition}`}
-              style={{
-                backgroundImage: `url(${img.url})`,
-              }}
-            ></motion.div>
-          )
-        })}
-    </AnimatePresence>
+    <>
+      {props.props.map((img, index) => {
+        return (
+          <div
+            key={index}
+            className={`absolute top-0 w-full h-full bg transition ${
+              img.transition
+            } ${img.type === props.stateImage.type ? "entrar" : "salir"}`}
+            style={{
+              backgroundImage: `url(${img.url})`,
+            }}
+          ></div>
+        )
+      })}
+    </>
   )
 }

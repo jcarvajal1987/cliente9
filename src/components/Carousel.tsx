@@ -6,34 +6,45 @@ import { CarouselImage } from "./CarouselImage"
 
 export const Carousel = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndexTitle, setSelectedIndexTitle] = useState(0)
   const [selectedImage, setSelectedImage] = useState(props.images[0])
+  const [selectedTitle, setSelectedTitle] = useState(props.titles[0])
   const [loaded, setLoaded] = useState(true)
 
   useEffect(() => {
     if (props.autoPlay || !props.showButtons) {
-      const interval = setInterval(() => {
+      const jorge2 = setInterval(() => {
         selectNewImage(selectedIndex, props.images)
-      }, 6000)
-      return () => clearInterval(interval)
+      }, 5000)
+      return () => clearInterval(jorge2)
     }
-  })
+  }, [selectedIndex])
+
+  useEffect(() => {
+    const jorge = setInterval(() => {
+      selectNewTitle(selectedIndexTitle, props.titles)
+    }, 4000)
+    return () => clearInterval(jorge)
+  }, [selectedIndexTitle])
+
+  const selectNewTitle = (index: number, titles: string) => {
+    const condition = selectedIndexTitle + 1 === props.titles.length
+    const nextIndex = condition ? 0 : selectedIndexTitle + 1
+    setSelectedTitle(props.titles[nextIndex])
+    setSelectedIndexTitle(nextIndex)
+  }
 
   const sentence = {
-    hidden: { opacity: 1 },
     visible: {
-      opacity: 1,
       transition: {
-        delayChildren: 1,
+        delayChildren: 0.5,
         staggerChildren: 0.05,
-        duration: 2,
       },
     },
     exit: {
-      opacity: 1,
       transition: {
         delayChildren: 0,
         staggerChildren: 0.05,
-        duration: 2,
       },
     },
   }
@@ -159,45 +170,26 @@ export const Carousel = (props) => {
           className="absolute w-full h-full bg-black opacity-0"
         ></span>
 
-        <div className="container mx-auto ">
-          <div className="flex flex-wrap items-center">
-            <div className="w-full px-4 ml-auto mr-auto text-center">
+        <div className="container flex flex-wrap mx-auto">
+          <div className="flex-wrap block mitad1">
+            <div className="w-full px-4 ml-auto mr-auto text-center grid">
               <AnimatePresence>
-                {loaded && (
-                  <>
-                    <motion.h3
-                      variants={sentence}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      key={selectedImage.title}
-                    >
-                      {selectedImage.title.split("").map((char, index) => {
-                        return (
-                          <motion.span
-                            className="text-5xl font-semibold primary title01"
-                            key={char + "-" + index}
-                            variants={letter}
-                          >
-                            {char}
-                          </motion.span>
-                        )
-                      })}
-                    </motion.h3>
-                    <motion.h3
-                      variants={sentence2}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      key={selectedImage.description}
-                      className="flex"
-                    >
-                      {selectedImage.description
-                        .split("")
-                        .map((char, index) => {
+                {props.titles
+                  .filter((title) => title.title === selectedTitle.title)
+                  .map((title, index) => {
+                    return (
+                      <motion.h3
+                        className="relative flex justify-end"
+                        variants={sentence}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        key={selectedTitle.title}
+                      >
+                        {title.title.split("").map((char, index) => {
                           return (
                             <motion.span
-                              className="block mt-4 text-lg text-gray-300"
+                              className=" text-5xl font-semibold primary title01"
                               key={char + "-" + index}
                               variants={letter}
                             >
@@ -205,12 +197,34 @@ export const Carousel = (props) => {
                             </motion.span>
                           )
                         })}
-                    </motion.h3>
-                  </>
-                )}
+                      </motion.h3>
+                    )
+                  })}
+
+                {/*<motion.h3
+                    variants={sentence2}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    key={selectedImage.description}
+                    className="flex justify-end"
+                  >
+                    {selectedImage.description.split("").map((char, index) => {
+                      return (
+                        <motion.span
+                          className="block mt-4 text-lg text-gray-300  description01 primary"
+                          key={char + "-" + index}
+                          variants={letter}
+                        >
+                          {char}
+                        </motion.span>
+                      )
+                    })}
+                  </motion.h3>*/}
               </AnimatePresence>
             </div>
           </div>
+          <div className="mitad2"> jorge</div>
         </div>
       </div>
 

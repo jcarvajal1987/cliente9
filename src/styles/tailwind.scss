@@ -6,14 +6,39 @@
 @tailwind utilities;
 
 /* purgecss start ignore */
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900);
 
 .primary{
   color: #003e6f;
+  font-family: raleway;
 }
 .title01{
-  font-weight:900;
+  font-weight:800;
   font-size: 76px;
+}
+.description01{
+  font-weight:600;
+  font-size: 27px;
+}
+.mitad1{
+  flex: 1 1 10rem;
+}
+.mitad2{
+  flex: 1 1 10rem;
+}
+
+.entrar{
+  opacity: 1;
+  transition: opacity 4s;
+}
+.salir{
+  opacity: 0;
+  transition: opacity 4s;
+}
+
+.relative {
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
 @keyframes example1 {
@@ -25,8 +50,8 @@
     to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px ;}
   }
 @keyframes example3 {
-    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:right center 0px;}
-    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:right center 0px ;}
+    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:center center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:center center 0px ;}
   }
 @keyframes example4 {
     from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px;}
@@ -34,7 +59,7 @@
   }
 
 .transition{
-    animation-duration: 9s;
+    animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
