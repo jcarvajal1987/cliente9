@@ -60,7 +60,7 @@ export const CarouselImage = (props) => {
         return (
           <div
             key={index}
-            className={`absolute top-0 w-full h-full bg transition ${
+            className={`absolute top-0 w-full h-full bg bg-center transition ${
               img.transition
             } ${img.type === props.stateImage.type ? "entrar" : "salir"}`}
             style={{

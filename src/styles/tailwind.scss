@@ -10,21 +10,50 @@
 
 .primary{
   color: #003e6f;
-  font-family: raleway;
+  font-family: "raleway", Lato, Helvetica, sans-serif  arial,;
 }
 .title01{
-  font-weight:800;
-  font-size: 76px;
+  font-weight:700;
+  font-size: 80px;
 }
 .description01{
-  font-weight:600;
-  font-size: 27px;
+  font-weight:500;
+  font-size: 29px;
+  min-width: 7px;
+    letter-spacing: -1px;
 }
 .mitad1{
-  flex: 1 1 10rem;
+  width: 50%;
 }
 .mitad2{
   flex: 1 1 10rem;
+}
+
+@media screen and (min-width: 640px) {
+  .transition01{
+
+    background-position: 50% 50%;
+  }
+ }
+@media screen and (min-width: 640px) { 
+  .transition01 {
+    right: -23%;
+    background-position: 22% 50%;
+  }
+  .transition03 {
+    right: -19%;
+  }
+  .mitad1{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) { 
+  .transition03 {
+    top: -9%;
+  }
+  .mitad1{
+    width: 100%;
+  }
 }
 
 .entrar{
@@ -36,9 +65,9 @@
   transition: opacity 4s;
 }
 
-.relative {
+.relative-grid {
   grid-column-start: 1;
-  grid-row-start: 1;
+  grid-row-start:1;
 }
 
 @keyframes example1 {
@@ -77,4 +106,4 @@
     animation-name: example4;
 }
 
-.bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;background-size:cover;background-position: center;}
+.bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;background-size:cover;}
