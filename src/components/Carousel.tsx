@@ -206,7 +206,10 @@ export const Carousel = (props) => {
                   .filter((title) => title.title === selectedTitle.title)
                   .map((title, index) => {
                     return (
-                      <div className="table w-full m-auto lg:float-right grid">
+                      <div
+                        key={index}
+                        className="table w-full m-auto lg:float-right grid"
+                      >
                         <AnimatePresence>
                           <motion.h3
                             className="flex justify-end m-auto relative-grid md:m-0"
@@ -240,7 +243,10 @@ export const Carousel = (props) => {
                   )
                   .map((description, index) => {
                     return (
-                      <div className="table m-auto lg:float-right grid">
+                      <div
+                        key={index}
+                        className="table m-auto lg:float-right grid"
+                      >
                         <AnimatePresence>
                           <motion.h3
                             className="flex justify-end m-auto relative-grid md:m-0"
