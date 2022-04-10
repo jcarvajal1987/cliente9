@@ -10,10 +10,6 @@ export const CarouselImage = (props) => {
 
   const selectedImage = images[index]
 
-  //setInterval(() => {
-  //  index === images.length ? setIndex(0) : setIndex(index + 1)
-  //}, 5000)
-
   useEffect(() => {
     if (index + 1 === images.length) {
       const jorge2 = setInterval(() => {
