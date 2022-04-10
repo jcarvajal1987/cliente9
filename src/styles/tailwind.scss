@@ -12,6 +12,9 @@
   color: #003e6f;
   font-family: "raleway", Lato, Helvetica, sans-serif  arial,;
 }
+.primary-color{
+  color: #003e6f;
+}
 .title01{
   font-weight:700;
   font-size: 80px;
@@ -29,12 +32,7 @@
   flex: 1 1 10rem;
 }
 
-@media screen and (min-width: 640px) {
-  .transition01{
 
-    background-position: 50% 50%;
-  }
- }
 @media screen and (min-width: 640px) { 
   .transition01 {
     right: -23%;
@@ -71,16 +69,16 @@
 }
 
 @keyframes example1 {
-    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:center center 0px;}
-    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:center center 0px ;}
+    from {transform:scale(1);}
+    to {transform:scale(1.1);}
   }
 @keyframes example2 {
     from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px;}
     to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px ;}
   }
 @keyframes example3 {
-    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:center center 0px;}
-    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:center center 0px ;}
+    from {transform: scale(1.1);}
+    to {transform: scale(1);}
   }
 @keyframes example4 {
     from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px;}
@@ -88,19 +86,22 @@
   }
 
 .transition{
-    animation-duration: 15s;
-    animation-timing-function: linear;
+    animation-duration: 18s;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    
 }
 .transition01{
     animation-name: example1;
+    will-change: transform;
 }
 .transition02{
     animation-name: example2;
 }
 .transition03{
     animation-name: example3;
+    will-change: transform;
 }
 .transition04{
     animation-name: example4;

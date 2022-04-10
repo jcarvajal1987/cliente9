@@ -22,21 +22,21 @@ export const NavBar = (props) => {
     <nav
       className={
         (transparent
-          ? "relative z-50 w-full"
+          ? "relative z-50 w-full "
           : "relative shadow-lg bg-white shadow-lg") +
-        " flex flex-wrap items-center justify-between px-2 py-3 "
+        " flex flex-wrap items-center justify-between px-2 py-3 z-10"
       }
     >
-      <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
+      <div className="flex flex-wrap items-center justify-between w-full px-4 mx-auto">
         <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
           <Link href="/">
             <a
               className={
-                (transparent ? "text-white" : "text-gray-800") +
+                (transparent ? "primary-color" : "text-gray-600") +
                 " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
               }
             >
-              Tailwind Starter Kit
+              SKYRIDE ESTUDIOS
             </a>
           </Link>
           <button
@@ -49,7 +49,17 @@ export const NavBar = (props) => {
                 (transparent ? "text-white" : "text-gray-800") + " fas fa-bars"
               }
             >
-              X
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                style={{ fill: "#003e6f" }}
+              >
+                <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
+              </svg>
             </i>
           </button>
         </div>
@@ -67,15 +77,15 @@ export const NavBar = (props) => {
                   onClick={() => setNavbarOpen(!navbarOpen)}
                   className={
                     (transparent
-                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
-                      : "text-gray-800 hover:text-gray-600") +
+                      ? "lg:text-gray-800 lg:hover:text-gray-300 primary-color"
+                      : "primary-color hover:text-gray-600") +
                     " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   }
                 >
                   <i
                     className={
                       (transparent
-                        ? "lg:text-gray-300 text-gray-500"
+                        ? "lg:primary-color primary-color"
                         : "text-gray-500") +
                       " far fa-file-alt text-lg leading-lg mr-2"
                     }

@@ -1,36 +1,63 @@
 import React, { useEffect, useState } from "react"
 
 export const CarouselImage = (props) => {
-  const [path, setPath] = useState("transition01")
+  const images = [
+    { url: "./landing03.webp", transition: "transition03" },
+    { url: "./woman2.webp", transition: "transition01" },
+  ]
 
-  const generateRandomNumber = () => {
-    return Math.floor(Math.random() * 4) + 1
-  }
+  const [index, setIndex] = useState(0)
 
-  function defineImgPath(result) {
-    switch (result) {
-      case 1:
-        setPath("transition01")
-        break
-      case 2:
-        setPath("transition02")
-        break
-      case 3:
-        setPath("transition03")
-        break
-      case 4:
-        setPath("transition04")
-        break
-    }
-  }
+  const selectedImage = images[index]
 
-  const rollDice = () => {
-    const result = generateRandomNumber()
-    defineImgPath(result)
-  }
+  //setInterval(() => {
+  //  index === images.length ? setIndex(0) : setIndex(index + 1)
+  //}, 5000)
+
   useEffect(() => {
-    rollDice()
-  }, [props.props.url])
+    if (index + 1 === images.length) {
+      const jorge2 = setInterval(() => {
+        setIndex(0)
+      }, 10000)
+      return () => clearInterval(jorge2)
+    } else {
+      const jorge2 = setInterval(() => {
+        setIndex(index + 1)
+      }, 10000)
+      return () => clearInterval(jorge2)
+    }
+  }, [index])
+
+  //const [path, setPath] = useState("transition01")
+
+  //const generateRandomNumber = () => {
+  //  return Math.floor(Math.random() * 4) + 1
+  //}
+
+  //function defineImgPath(result) {
+  //  switch (result) {
+  //    case 1:
+  //      setPath("transition01")
+  //      break
+  //    case 2:
+  //      setPath("transition02")
+  //      break
+  //    case 3:
+  //      setPath("transition03")
+  //      break
+  //    case 4:
+  //      setPath("transition04")
+  //      break
+  //  }
+  //}
+
+  //const rollDice = () => {
+  //  const result = generateRandomNumber()
+  //  defineImgPath(result)
+  //}
+  //useEffect(() => {
+  //  rollDice()
+  //}, [props.props.url])
 
   const container = {
     hidden: { opacity: 0 },
@@ -56,13 +83,15 @@ export const CarouselImage = (props) => {
 
   return (
     <>
-      {props.props.map((img, index) => {
+      {images.map((img, index) => {
         return (
           <div
             key={index}
+            id={index}
             className={`absolute top-0 w-full h-full bg bg-center transition ${
               img.transition
-            } ${img.type === props.stateImage.type ? "entrar" : "salir"}`}
+            } 
+            ${img.url === selectedImage.url ? "entrar " : "salir"}`}
             style={{
               backgroundImage: `url(${img.url})`,
             }}
