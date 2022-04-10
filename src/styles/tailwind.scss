@@ -6,6 +6,108 @@
 @tailwind utilities;
 
 /* purgecss start ignore */
-html {
-  @apply antialiased;
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900);
+
+.primary{
+  color: #003e6f;
+  font-family: "raleway", Lato, Helvetica, sans-serif  arial,;
 }
+.oscuro{
+  color: #222222;
+}
+.primary-color{
+  color: #003e6f;
+}
+.title01{
+  font-weight:700;
+  font-size: 80px;
+}
+.description01{
+  font-weight:500;
+  font-size: 29px;
+  min-width: 7px;
+    letter-spacing: -1px;
+}
+.mitad1{
+  width: 50%;
+}
+.mitad2{
+  flex: 1 1 10rem;
+}
+
+
+@media screen and (min-width: 640px) { 
+  .transition01 {
+    right: -23%;
+    background-position: 22% 50%;
+  }
+  .transition03 {
+    right: -19%;
+  }
+  .mitad1{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) { 
+  .transition03 {
+    top: -9%;
+  }
+  .mitad1{
+    width: 100%;
+  }
+}
+
+.entrar{
+  opacity: 1;
+  transition: opacity 4s;
+}
+.salir{
+  opacity: 0;
+  transition: opacity 4s;
+}
+
+.relative-grid {
+  grid-column-start: 1;
+  grid-row-start:1;
+}
+
+@keyframes example1 {
+    from {transform:scale(1);}
+    to {transform:scale(1.1);}
+  }
+@keyframes example2 {
+    from {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px ;}
+  }
+@keyframes example3 {
+    from {transform: scale(1.1);}
+    to {transform: scale(1);}
+  }
+@keyframes example4 {
+    from {transform: translate3d(0, 0, 0px) scale(1.1);transform-origin:left center 0px;}
+    to {transform: translate3d(0, 0, 0px) scale(1);transform-origin:left center 0px ;}
+  }
+
+.transition{
+    animation-duration: 18s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+.transition01{
+    animation-name: example1;
+    will-change: transform;
+}
+.transition02{
+    animation-name: example2;
+}
+.transition03{
+    animation-name: example3;
+    will-change: transform;
+}
+.transition04{
+    animation-name: example4;
+}
+
+.bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;background-size:cover;}
