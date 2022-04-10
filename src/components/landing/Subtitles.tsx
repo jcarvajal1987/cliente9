@@ -3,20 +3,20 @@ import React, { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
 export const Subtitles = () => {
-  const subtitles = [
+  const titles = [
     "Somos\u00A0Desarrolladores",
     "Somos\u00A0Creativos",
     "Somos\u00A0Visionarios",
-    "Y\u00A0Somos\u00A0Innovadores",
+    "Somos\u00A0Innovadores",
     "Cuánto\u00A0Más\u00A0puedes\u00A0Ser?",
   ]
 
   const [index, setIndex] = useState(0)
 
-  const activetitle = subtitles[index]
+  const activetitle = titles[index]
 
   useEffect(() => {
-    if (index + 1 === subtitles.length) {
+    if (index + 1 === titles.length) {
       const jorge2 = setInterval(() => {
         setIndex(0)
       }, 7000)
