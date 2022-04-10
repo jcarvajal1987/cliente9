@@ -59,39 +59,30 @@ export const Titles = () => {
 
   return (
     <>
-      {titles
-        .filter((title) => title === activetitle)
-        .map((title, index) => {
-          return (
-            <div
-              key={index}
-              className="table w-full m-auto lg:float-right grid"
-            >
-              <AnimatePresence>
-                <motion.h3
-                  className="flex justify-end m-auto relative-grid md:m-0"
-                  variants={sentence}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  key={activetitle}
+      <div className="table w-full m-auto lg:float-right grid">
+        <AnimatePresence>
+          <motion.h3
+            className="flex justify-end m-auto relative-grid md:m-0"
+            variants={sentence}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            key={activetitle}
+          >
+            {activetitle.split("").map((char, index) => {
+              return (
+                <motion.span
+                  className="text-6xl font-bold  primary lg:text-7xl"
+                  key={char + "-" + index}
+                  variants={letter}
                 >
-                  {title.split("").map((char, index) => {
-                    return (
-                      <motion.span
-                        className="text-6xl font-bold  primary lg:text-7xl"
-                        key={char + "-" + index}
-                        variants={letter}
-                      >
-                        {char}
-                      </motion.span>
-                    )
-                  })}
-                </motion.h3>
-              </AnimatePresence>
-            </div>
-          )
-        })}
+                  {char}
+                </motion.span>
+              )
+            })}
+          </motion.h3>
+        </AnimatePresence>
+      </div>
     </>
   )
 }
