@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
 
-export const Titles = () => {
-  const titles = ["SKYRIDE", "DESCUBRE", "KYO#"]
+export const Subtitles = () => {
+  const titles = [
+    "Somos\u00A0Desarrolladores",
+    "Somos\u00A0Creativos",
+    "Somos\u00A0Visionarios",
+    "Somos\u00A0Innovadores",
+    "Cuánto\u00A0Más\u00A0puedes\u00A0Ser?",
+  ]
 
   const [index, setIndex] = useState(0)
 
@@ -13,12 +19,12 @@ export const Titles = () => {
     if (index + 1 === titles.length) {
       const jorge2 = setInterval(() => {
         setIndex(0)
-      }, 13000)
+      }, 7000)
       return () => clearInterval(jorge2)
     } else {
       const jorge2 = setInterval(() => {
         setIndex(index + 1)
-      }, 13000)
+      }, 7000)
       return () => clearInterval(jorge2)
     }
   }, [index])
@@ -70,7 +76,7 @@ export const Titles = () => {
             {activetitle.split("").map((char, index) => {
               return (
                 <motion.span
-                  className="text-6xl font-bold  primary lg:text-7xl"
+                  className="font-medium text-1xl primary lg:text-2xl"
                   key={char + "-" + index}
                   variants={letter}
                 >

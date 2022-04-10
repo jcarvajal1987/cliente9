@@ -1,6 +1,7 @@
 import React from "react"
 
 import { CarouselImage } from "./CarouselImage"
+import { Subtitles } from "./landing/Subtitles"
 import { Titles } from "./landing/Titles"
 
 export const Carousel = (props) => {
@@ -119,7 +120,8 @@ export const Carousel = (props) => {
           <div className="flex-wrap block w-full pb-20  sm:pb-0 sm:w-7/12 md:w-6/12">
             <div className="w-full px-4 ml-auto mr-auto text-center grid">
               <div className="table p-2 m-auto bg-white sm:bg-inherit sm:m-0">
-                <Titles />{" "}
+                <Titles />
+                <Subtitles />
                 {/*{props.titles
                   .filter((title) => title.title === selectedTitle.title)
                   .map((title, index) => {

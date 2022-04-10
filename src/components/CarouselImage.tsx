@@ -87,7 +87,6 @@ export const CarouselImage = (props) => {
         return (
           <div
             key={index}
-            id={index}
             className={`absolute top-0 w-full h-full bg bg-center transition ${
               img.transition
             } 
