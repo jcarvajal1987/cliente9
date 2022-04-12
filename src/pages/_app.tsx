@@ -5,6 +5,7 @@ import { AppProps } from "next/app"
 import "../styles/tailwind.scss"
 import { useRouter } from "next/router"
 
+import { CarouselImage } from "@components/CarouselImage"
 import { NavBar } from "@components/NavBar"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <>
+      <CarouselImage />
       <NavBar router={router.pathname} />
+
       <AnimatePresence>
         <Component key={router.route} {...pageProps} />
       </AnimatePresence>

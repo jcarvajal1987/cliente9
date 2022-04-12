@@ -54,7 +54,7 @@ export default function Dasboard() {
         <div className="flex-1  bg-blueGray-100">
           {/*<Navbar />*/}
           {/* Header */}
-          <div className="relative pt-12 pb-32 bg-pink-600 md:pt-32">
+          <div className="relative pt-12 pb-32 md:pt-32">
             <div className="w-full px-4 mx-auto md:px-10">
               <div>
                 {/* Card stats */}

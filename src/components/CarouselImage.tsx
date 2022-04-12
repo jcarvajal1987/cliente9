@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 
+import { useRouter } from "next/router"
+
 export const CarouselImage = (props) => {
   const images = [
     { url: "./landing03.webp", transition: "transition03" },
@@ -81,22 +83,48 @@ export const CarouselImage = (props) => {
     },
   }
 
+  const [transparent, setTransparent] = React.useState(true)
+
+  const ruta = useRouter()
+
+  const router = ruta.pathname
+
+  console.log(router)
+
+  useEffect(() => {
+    switch (true) {
+      case router == "/dashboard":
+        setTransparent(false)
+        break
+      case router == "/":
+        setTransparent(true)
+        break
+    }
+  }, [router])
+
   return (
     <>
-      {images.map((img, index) => {
-        return (
-          <div
-            key={index}
-            className={`absolute top-0 w-full h-full bg bg-center transition ${
-              img.transition
-            } 
-            ${img.url === selectedImage.url ? "entrar " : "salir"}`}
-            style={{
-              backgroundImage: `url(${img.url})`,
-            }}
-          ></div>
-        )
-      })}
+      <div
+        className={
+          transparent
+            ? "not-blur fixed top-0 w-full h-full "
+            : " blur-bg fixed top-0 w-full h-full"
+        }
+      >
+        {images.map((img, index) => {
+          return (
+            <div
+              className={`fixed top-0 w-full h-full bg bg-center transition ${
+                img.transition
+              } ${img.url === selectedImage.url ? "entrar " : "salir"}`}
+              key={index}
+              style={{
+                backgroundImage: `url(${img.url})`,
+              }}
+            ></div>
+          )
+        })}
+      </div>
     </>
   )
 }

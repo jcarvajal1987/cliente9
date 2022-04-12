@@ -1,6 +1,5 @@
 import React from "react"
 
-import { CarouselImage } from "./CarouselImage"
 import { Subtitles } from "./landing/Subtitles"
 import { Titles } from "./landing/Titles"
 
@@ -109,7 +108,6 @@ export const Carousel = (props) => {
     <>
       {/*<img src={selectedImage} />*/}
 
-      <CarouselImage />
       <div className="relative top-0 flex items-end justify-center w-full h-full sm:items-center">
         {/*<span
           id="blackOverlay"

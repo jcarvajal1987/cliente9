@@ -91,7 +91,7 @@ export default function LandingPage() {
       animate="show"
       exit="exit"
       key={1}
-      className="absolute top-0 w-full h-full bg-center bg-cover"
+      className="absolute top-0 w-full h-full"
     >
       <Head>
         <title>kyo</title>
@@ -100,7 +100,7 @@ export default function LandingPage() {
         <meta itemProp="description" content="hide" />
         <meta itemProp="image" content="gack" />
       </Head>
-      <div className="relative h-full truncate bg-white">
+      <div className="relative h-full truncate ">
         <Carousel
           titles={titles}
           descriptions={descriptions}

@@ -34,7 +34,7 @@ export default function SideBar() {
       <div
         className={
           (button ? "-translate-x-full" : "") +
-          " sidebar z-10 bg-blue-800 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform  md:relative md:translate-x-0 transition duration-200 ease-in-out"
+          " sidebar z-10  text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform  md:relative md:translate-x-0 transition duration-200 ease-in-out"
         }
       >
         <a
