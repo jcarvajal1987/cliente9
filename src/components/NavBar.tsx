@@ -2,9 +2,12 @@ import React, { useEffect } from "react"
 
 import Link from "next/link"
 
+import { BasicModal } from "./modal/BasicModal"
+
 export const NavBar = (props) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [transparent, setTransparent] = React.useState(true)
+  const [show, setShow] = React.useState(true)
   const router = props.router
 
   useEffect(() => {
@@ -27,6 +30,9 @@ export const NavBar = (props) => {
         " flex flex-wrap items-center justify-between px-2 py-3 z-10"
       }
     >
+      <BasicModal show={show}>
+        <div onClick={() => setShow(false)}>soy el contenido</div>
+      </BasicModal>
       <div className="flex flex-wrap items-center justify-between w-full px-4 mx-auto">
         <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
           <Link href="/">

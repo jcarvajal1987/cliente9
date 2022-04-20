@@ -89,8 +89,6 @@ export const CarouselImage = (props) => {
 
   const router = ruta.pathname
 
-  console.log(router)
-
   useEffect(() => {
     switch (true) {
       case router == "/dashboard":

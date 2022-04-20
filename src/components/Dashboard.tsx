@@ -51,7 +51,7 @@ export default function Dasboard() {
       >
         {/*<Sidebar />*/}
         <SideBar />
-        <div className="flex-1  bg-blueGray-100">
+        <div className="flex-1">
           {/*<Navbar />*/}
           {/* Header */}
           <div className="relative pt-12 pb-32 md:pt-32">
