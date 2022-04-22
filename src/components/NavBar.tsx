@@ -7,7 +7,7 @@ import { BasicModal } from "./modal/BasicModal"
 export const NavBar = (props) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [transparent, setTransparent] = React.useState(true)
-  const [show, setShow] = React.useState(true)
+  const [show, setShow] = React.useState(false)
   const router = props.router
 
   useEffect(() => {
@@ -177,7 +177,16 @@ export const NavBar = (props) => {
                 type="button"
                 style={{ transition: "all .15s ease" }}
               >
-                <i className="fas fa-arrow-alt-circle-down"></i> Download
+                <Link href="/login">
+                  <a
+                    className={
+                      (transparent ? "primary-color" : "text-gray-600") +
+                      " text-sm font-bold leading-relaxed inline-block whitespace-nowrap uppercase"
+                    }
+                  >
+                    Login
+                  </a>
+                </Link>
               </button>
             </li>
           </ul>

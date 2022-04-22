@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
+import { useRouter } from "next/router"
 
 export const Subtitles = () => {
-  const titles = [
+  const [titles, setTitles] = useState([
     "Somos\u00A0Desarrolladores",
     "Somos\u00A0Creativos",
     "Somos\u00A0Visionarios",
     "Somos\u00A0Innovadores",
     "Cuánto\u00A0Más\u00A0puedes\u00A0Ser?",
-  ]
+  ])
+  const router = useRouter()
+
+  const [show, setShow] = useState(true)
 
   const [index, setIndex] = useState(0)
 
   const activetitle = titles[index]
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      setShow(true)
+    } else {
+      setShow(false)
+    }
+  }, [router])
 
   useEffect(() => {
     if (index + 1 === titles.length) {
@@ -33,13 +45,13 @@ export const Subtitles = () => {
     visible: {
       transition: {
         delayChildren: 0.5,
-        staggerChildren: 0.05,
+        staggerChildren: 0.04,
       },
     },
     exit: {
       transition: {
         delayChildren: 0,
-        staggerChildren: 0.05,
+        staggerChildren: 0.02,
       },
     },
   }
@@ -65,26 +77,28 @@ export const Subtitles = () => {
     <>
       <div className="table w-full m-auto lg:float-right grid">
         <AnimatePresence>
-          <motion.h3
-            className="flex justify-end m-auto relative-grid md:m-0"
-            variants={sentence}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            key={activetitle}
-          >
-            {activetitle.split("").map((char, index) => {
-              return (
-                <motion.span
-                  className="font-medium text-1xl primary lg:text-2xl"
-                  key={char + "-" + index}
-                  variants={letter}
-                >
-                  {char}
-                </motion.span>
-              )
-            })}
-          </motion.h3>
+          {show && (
+            <motion.h3
+              className="flex justify-end m-auto relative-grid md:m-0"
+              variants={sentence}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              key={activetitle}
+            >
+              {activetitle.split("").map((char, index) => {
+                return (
+                  <motion.span
+                    className="font-medium text-1xl primary lg:text-2xl"
+                    key={char + "-" + index}
+                    variants={letter}
+                  >
+                    {char}
+                  </motion.span>
+                )
+              })}
+            </motion.h3>
+          )}
         </AnimatePresence>
       </div>
     </>
