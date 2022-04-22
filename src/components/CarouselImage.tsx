@@ -112,7 +112,7 @@ export const CarouselImage = (props) => {
         {images.map((img, index) => {
           return (
             <div
-              className={`fixed top-0 w-full h-full bg bg-center transition ${
+              className={`absolute top-0 w-full h-full bg bg-center transition ${
                 img.transition
               } ${img.url === selectedImage.url ? "entrar " : "salir"}`}
               key={index}

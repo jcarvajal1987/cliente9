@@ -30,29 +30,6 @@ export default function LandingPage() {
     },
   ]
 
-  const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -100 },
-  }
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delay: 0,
-        staggerChildren: 0.2,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        delay: 0.2,
-        staggerChildren: 0.09,
-      },
-    },
-  }
   const containerIn = {
     hidden: { opacity: 0 },
     show: {
@@ -60,30 +37,19 @@ export default function LandingPage() {
       transition: {
         delay: 0,
         staggerChildren: 0.2,
-        duration: 1,
+        duration: 0,
       },
     },
     exit: {
       opacity: 0,
       transition: {
         staggerChildren: 0.09,
-        duration: 1,
+        delay: 1,
+        duration: 0,
       },
     },
   }
-  const item = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {},
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        delay: 0,
-      },
-    },
-  }
+
   return (
     <motion.main
       variants={containerIn}

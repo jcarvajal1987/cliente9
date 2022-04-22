@@ -31,7 +31,6 @@ export const BasicModal = (props) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          key={show}
         >
           <div {...rest}>{children}</div>
         </motion.div>

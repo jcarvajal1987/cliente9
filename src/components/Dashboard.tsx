@@ -10,17 +10,18 @@ export default function Dasboard() {
     show: {
       opacity: 1,
       transition: {
-        delay: 0,
+        delay: 0.5,
         delayChildren: 1,
         staggerChildren: 0.09,
-        duration: 1,
+        duration: 0.4,
       },
     },
     exit: {
       opacity: 0,
       transition: {
+        delay: 0,
         staggerChildren: 0.09,
-        duration: 1,
+        duration: 0.3,
       },
     },
   }
