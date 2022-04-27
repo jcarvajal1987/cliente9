@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Capa_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 371.2"
+	 style="enable-background:new 0 0 640 371.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000099627856576529007790000006796087661423907465_);}
+	.st1{fill:#FFFFFF;}
+</style>
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="376" width="695.3" x="-27.7" y="-8.7"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M640,371.8H0V3.8c0,0,109.8,68,319.5,68S640,3.8,640,3.8V371.8z"/>
+		</defs>
+		<clipPath id="SVGID_00000024708409143415683880000016211949435772435589_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g style="clip-path:url(#SVGID_00000024708409143415683880000016211949435772435589_);">
+			<path class="st1" d="M662.4,379.8H-22.4v-338c0,0,117.5,68,341.9,68s342.9-68,342.9-68L662.4,379.8L662.4,379.8z"/>
+			<g>
+				<g>
+					
+						<image style="overflow:visible;enable-background:new    ;" width="696" height="97" xlink:href="94E0F01A.png"  transform="matrix(0.9989 0 0 0.9989 -27.6522 13.8773)">
+					</image>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

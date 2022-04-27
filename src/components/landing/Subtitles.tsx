@@ -89,7 +89,7 @@ export const Subtitles = () => {
               {activetitle.split("").map((char, index) => {
                 return (
                   <motion.span
-                    className="font-medium text-1xl primary lg:text-2xl"
+                    className="font-medium text-1xl primary lg:text-2xl description01"
                     key={char + "-" + index}
                     variants={letter}
                   >

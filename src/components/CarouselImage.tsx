@@ -16,19 +16,19 @@ export const CarouselImage = (props) => {
   //  index === images.length ? setIndex(0) : setIndex(index + 1)
   //}, 5000)
 
-  useEffect(() => {
-    if (index + 1 === images.length) {
-      const jorge2 = setInterval(() => {
-        setIndex(0)
-      }, 10000)
-      return () => clearInterval(jorge2)
-    } else {
-      const jorge2 = setInterval(() => {
-        setIndex(index + 1)
-      }, 10000)
-      return () => clearInterval(jorge2)
-    }
-  }, [index])
+  //useEffect(() => {
+  //  if (index + 1 === images.length) {
+  //    const jorge2 = setInterval(() => {
+  //      setIndex(0)
+  //    }, 10000)
+  //    return () => clearInterval(jorge2)
+  //  } else {
+  //    const jorge2 = setInterval(() => {
+  //      setIndex(index + 1)
+  //    }, 10000)
+  //    return () => clearInterval(jorge2)
+  //  }
+  //}, [index])
 
   //const [path, setPath] = useState("transition01")
 
@@ -117,7 +117,7 @@ export const CarouselImage = (props) => {
               } ${img.url === selectedImage.url ? "entrar " : "salir"}`}
               key={index}
               style={{
-                backgroundImage: `url(${img.url})`,
+                backgroundImage: `url(${img.url}) `,
               }}
             ></div>
           )
