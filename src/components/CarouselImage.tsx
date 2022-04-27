@@ -8,7 +8,7 @@ export const CarouselImage = (props) => {
     { url: "./woman2.webp", transition: "transition01" },
   ]
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(1)
 
   const selectedImage = images[index]
 
@@ -117,7 +117,7 @@ export const CarouselImage = (props) => {
               } ${img.url === selectedImage.url ? "entrar " : "salir"}`}
               key={index}
               style={{
-                backgroundImage: `url(${img.url}) `,
+                backgroundImage: `url(${img.url})`,
               }}
             ></div>
           )

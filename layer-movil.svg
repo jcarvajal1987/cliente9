@@ -14,31 +14,28 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 371.2"
 	 style="enable-background:new 0 0 640 371.2;" xml:space="preserve">
 <style type="text/css">
-	.st0{clip-path:url(#SVGID_00000099627856576529007790000006796087661423907465_);}
+	.st0{clip-path:url(#SVGID_00000072276965558044239400000007087362422341653122_);}
 	.st1{fill:#FFFFFF;}
 </style>
 <metadata>
 	<sfw  xmlns="&ns_sfw;">
 		<slices></slices>
-		<sliceSourceBounds  bottomLeftOrigin="true" height="376" width="695.3" x="-27.7" y="-8.7"></sliceSourceBounds>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="379" width="704.2" x="-32.1" y="-53"></sliceSourceBounds>
 	</sfw>
 </metadata>
 <g>
-	<g>
-		<defs>
-			<path id="SVGID_1_" d="M640,371.8H0V3.8c0,0,109.8,68,319.5,68S640,3.8,640,3.8V371.8z"/>
-		</defs>
-		<clipPath id="SVGID_00000024708409143415683880000016211949435772435589_">
-			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-		</clipPath>
-		<g style="clip-path:url(#SVGID_00000024708409143415683880000016211949435772435589_);">
-			<path class="st1" d="M662.4,379.8H-22.4v-338c0,0,117.5,68,341.9,68s342.9-68,342.9-68L662.4,379.8L662.4,379.8z"/>
+	<defs>
+		<path id="SVGID_1_" d="M640,371.2H0v-326c0,0,109.8,68,319.5,68s320.5-68,320.5-68V371.2z"/>
+	</defs>
+	<clipPath id="SVGID_00000173848435813942301310000016184658013853048231_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000173848435813942301310000016184658013853048231_);">
+		<path class="st1" d="M662.4,424.2H-22.4v-338c0,0,117.5,68,341.9,68s342.9-68,342.9-68V424.2z"/>
+		<g>
 			<g>
-				<g>
-					
-						<image style="overflow:visible;enable-background:new    ;" width="696" height="97" xlink:href="94E0F01A.png"  transform="matrix(0.9989 0 0 0.9989 -27.6522 13.8773)">
-					</image>
-				</g>
+				
+					<image style="overflow:visible;" width="704.2" height="86.3" xlink:href="6550112B.png"  transform="matrix(1 0 0 1 -32.1131 73.8885)"/>
 			</g>
 		</g>
 	</g>
