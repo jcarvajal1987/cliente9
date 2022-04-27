@@ -106,7 +106,13 @@ export const Carousel = (props) => {
 
   return (
     <>
-      {/*<img src={selectedImage} />*/}
+      <div className="absolute bottom-0 w-full sm:hidden h-72">
+        <img
+          style={{ width: 100 + "%" }}
+          className="absolute bottom-0"
+          src="./layer-movil.svg"
+        />
+      </div>
 
       <div className="relative top-0 flex items-end justify-center w-full h-full sm:items-center">
         {/*<span
@@ -115,9 +121,9 @@ export const Carousel = (props) => {
         ></span>*/}
 
         <div className="container flex flex-wrap mx-auto">
-          <div className="flex-wrap block w-full pb-20  sm:pb-0 sm:w-7/12 md:w-6/12">
+          <div className="flex-wrap block w-full pb-10  sm:pb-0 sm:w-7/12 md:w-6/12">
             <div className="w-full px-4 ml-auto mr-auto text-center grid">
-              <div className="table p-2 m-auto bg-white sm:bg-inherit sm:m-0">
+              <div className="table  m-auto  sm:bg-inherit sm:m-0">
                 <Titles />
                 <Subtitles />
                 {/*{props.titles

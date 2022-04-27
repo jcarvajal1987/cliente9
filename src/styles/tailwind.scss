@@ -7,14 +7,15 @@
 
 /* purgecss start ignore */
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900);
-
+@import url(https://fonts.googleapis.com/css2?family=Poppins:400,700,500,600,300,200,100,800,900);
 body {
   overflow: hidden;
+  font-family: Poppins!important;
 }
 
 .primary{
   color: #003e6f;
-  font-family: "raleway", Lato, Helvetica, sans-serif  arial,;
+  font-family: Poppins!important;
 }
 .oscuro{
   color: #222222;
@@ -28,7 +29,7 @@ body {
 }
 .description01{
   font-weight:500;
-  font-size: 29px;
+  font-size: 27px;
   min-width: 7px;
     letter-spacing: -1px;
 }
@@ -53,6 +54,9 @@ body {
   }
 }
 @media screen and (max-width: 640px) { 
+  .transition01 {
+    top: -9%;
+  }
   .transition03 {
     top: -9%;
   }
@@ -137,4 +141,4 @@ body {
     animation-name: example4;
 }
 
-.bg{;pointer-events:none;display:block;object-fit: cover;min-width: 100%;background-size:cover;}
+.bg{;pointer-events:none;display:block;object-fit: cover;max-width: 100%;background-size:cover;}
