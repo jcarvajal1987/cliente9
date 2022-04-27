@@ -7,7 +7,7 @@
 
 /* purgecss start ignore */
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900);
-@import url(https://fonts.googleapis.com/css2?family=Poppins:400,700,500,600,300,200,100,800,900);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 body {
   overflow: hidden;
   font-family: Poppins!important;
@@ -40,14 +40,22 @@ body {
   flex: 1 1 10rem;
 }
 
+@media screen and (min-width: 1300px) {
+  .transition03 {
+    right: -3%!important;
+  }
+  .transition01 {
+    right: -7%!important;
+  }
+}
 
 @media screen and (min-width: 640px) { 
   .transition01 {
-    right: -23%;
+    right: -13%;
     background-position: 22% 50%;
   }
   .transition03 {
-    right: -19%;
+    right: -10%;
   }
   .mitad1{
     width: 100%;
@@ -141,4 +149,4 @@ body {
     animation-name: example4;
 }
 
-.bg{;pointer-events:none;display:block;object-fit: cover;max-width: 100%;background-size:cover;}
+.bg{;pointer-events:none;display:block;object-fit: cover;max-width: 1115px;background-size:cover;}
