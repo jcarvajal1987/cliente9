@@ -105,8 +105,8 @@ export const CarouselImage = (props) => {
       <div
         className={
           transparent
-            ? "not-blur fixed top-0 w-full h-full block "
-            : " blur-bg fixed top-0 w-full h-full block"
+            ? "not-blur fixed top-0 w-full h-full block z-[-1] "
+            : " blur-bg fixed top-0 w-full h-full block z-[-1] "
         }
       >
         {images.map((img, index) => {
