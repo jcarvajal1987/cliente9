@@ -11,18 +11,29 @@
 
 
 #__next{
+  flex: auto;
+  overflow: auto;
   display: flex;
     flex-direction: column;
+    
+    
 }
-html, #__next{
+html{
   height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  
 }
 body {
   width: 100%;
-  eight: 100vh;
-  font-family: Poppins!important;
   height: 100vh;
+  font-family: Poppins!important;
+  display: flex;
   position: absolute;
+  
 }
 
 .primary{
