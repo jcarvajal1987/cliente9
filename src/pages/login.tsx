@@ -42,7 +42,7 @@ export default function Login() {
   }
   return (
     <motion.div
-      className={`fixed top-0 left-0 flex flex-wrap items-center justify-center w-full h-full mx-auto `}
+      className={` top-0 left-0 flex flex-wrap items-center justify-center w-full h-full mx-auto `}
       variants={Layout}
       initial="hidden"
       animate="visible"

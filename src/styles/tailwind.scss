@@ -9,13 +9,20 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-html{
+
+#__next{
+  display: flex;
+    flex-direction: column;
+}
+html, #__next{
   height: 100vh;
 }
 body {
-  overflow: hidden;
+  width: 100%;
+  eight: 100vh;
   font-family: Poppins!important;
   height: 100vh;
+  position: absolute;
 }
 
 .primary{
