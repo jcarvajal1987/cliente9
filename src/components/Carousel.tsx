@@ -106,27 +106,33 @@ export const Carousel = (props) => {
 
   return (
     <>
-      <div className="absolute bottom-0 w-full sm:hidden h-72">
-        <img
-          style={{ width: 100 + "%" }}
-          className="absolute bottom-0"
-          src="./layer-movil.svg"
-        />
-      </div>
-
       <div className="relative top-0 flex items-end justify-center w-full h-full sm:items-center">
-        {/*<span
+        <div className="flex flex-col flex-auto">
+          <div
+            className="w-full sm:hidden "
+            //style={{
+            //  backgroundImage: `url(./layer-movil.svg)`,
+            //  height: `auto`,
+            //}}
+          >
+            <img
+              style={{ width: 100 + "%", height: "auto" }}
+              className=""
+              src="./layer-movil.svg"
+            />
+          </div>
+          {/*<span
           id="blackOverlay"
           className="absolute w-full h-full bg-black opacity-0"
         ></span>*/}
 
-        <div className="container flex flex-wrap mx-auto">
-          <div className="flex-wrap block w-full pb-10  sm:pb-0 sm:w-7/12 md:w-6/12">
-            <div className="w-full px-4 ml-auto mr-auto text-center grid">
-              <div className="table  m-auto  sm:bg-inherit sm:m-0">
-                <Titles />
-                <Subtitles />
-                {/*{props.titles
+          <div className="container z-10 flex flex-wrap mx-auto">
+            <div className="flex-wrap block w-full pb-5 bg-white sm:bg-transparent sm:pb-0 sm:w-7/12 md:w-6/12">
+              <div className="w-full px-4 ml-auto mr-auto text-center grid">
+                <div className="table  m-auto  sm:bg-inherit sm:m-0">
+                  <Titles />
+                  <Subtitles />
+                  {/*{props.titles
                   .filter((title) => title.title === selectedTitle.title)
                   .map((title, index) => {
                     return (
@@ -198,6 +204,7 @@ export const Carousel = (props) => {
                       </div>
                     )
                   })}*/}
+                </div>
               </div>
             </div>
           </div>
