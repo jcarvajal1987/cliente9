@@ -127,7 +127,7 @@ export const Carousel = (props) => {
         ></span>*/}
 
           <div className="container z-10 flex flex-wrap mx-auto">
-            <div className="flex-wrap block w-full pb-5 bg-white sm:bg-transparent sm:pb-0 sm:w-7/12 md:w-6/12">
+            <div className="flex-wrap block w-full pb-5 bg-white sm:bg-transparent sm:pb-10 sm:w-7/12 md:w-6/12">
               <div className="w-full px-4 ml-auto mr-auto text-center grid">
                 <div className="table  m-auto  sm:bg-inherit sm:m-0">
                   <Titles />
