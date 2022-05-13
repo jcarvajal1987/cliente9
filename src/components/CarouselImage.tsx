@@ -4,20 +4,20 @@ import { useRouter } from "next/router"
 
 export const CarouselImage = (props) => {
   const images = [
-    { url: "./landing03.webp", transition: "transition03" },
-    { url: "./woman4.webp", transition: "transition01" },
+    { url: "./landing03.webp", transition: "transition01" },
+    { url: "./woman5.webp", transition: "transition01" },
   ]
 
   const [index, setIndex] = useState(1)
 
   const selectedImage = images[index]
 
-  //useEffect(() => {
-  //  const jorge2 = setInterval(() => {
-  //    index + 1 === images.length ? setIndex(0) : setIndex(index + 1)
-  //  }, 10000)
-  //  return () => clearInterval(jorge2)
-  //}, [index])
+  useEffect(() => {
+    const timer = setInterval(() => {
+      index + 1 === images.length ? setIndex(0) : setIndex(index + 1)
+    }, 10000)
+    return () => clearInterval(timer)
+  }, [index])
 
   //setInterval(() => {
   //  index === images.length ? setIndex(0) : setIndex(index + 1)
