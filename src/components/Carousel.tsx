@@ -106,10 +106,10 @@ export const Carousel = (props) => {
 
   return (
     <>
-      <div className="relative top-0 flex items-end justify-center w-full h-full sm:items-center">
+      <div className="relative top-0 flex justify-center w-full h-full items-center-mod">
         <div className="flex flex-col flex-auto">
           <div
-            className="w-full sm:hidden "
+            className="w-full vertical-arc "
             //style={{
             //  backgroundImage: `url(./layer-movil.svg)`,
             //  height: `auto`,
@@ -126,8 +126,8 @@ export const Carousel = (props) => {
           className="absolute w-full h-full bg-black opacity-0"
         ></span>*/}
 
-          <div className="container z-10 flex flex-wrap mx-auto">
-            <div className="flex-wrap block w-full pb-5 bg-white sm:bg-transparent sm:pb-10 sm:w-7/12 md:w-6/12">
+          <div className="z-10 flex flex-wrap  mx-auto bg-ui">
+            <div className="flex-wrap block w-full pb-5 width-message sm:pb-10  ">
               <div className="w-full px-4 ml-auto mr-auto text-center grid">
                 <div className="table  m-auto  sm:bg-inherit sm:m-0">
                   <Titles />

@@ -72,11 +72,11 @@ export const Titles = () => {
 
   return (
     <>
-      <div className="table w-full m-auto lg:float-right grid">
+      <div className="table w-full m-auto  grid">
         <AnimatePresence>
           {show && (
             <motion.h3
-              className="flex justify-end m-auto relative-grid md:m-0"
+              className="flex justify-center m-auto relative-grid md:m-0"
               variants={sentence}
               initial="hidden"
               animate="visible"
