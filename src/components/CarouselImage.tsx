@@ -90,7 +90,7 @@ export const CarouselImage = (props) => {
     },
   }
 
-  const [transparent, setTransparent] = React.useState(true)
+  const [blur, setBlur] = React.useState(true)
 
   const ruta = useRouter()
 
@@ -98,11 +98,11 @@ export const CarouselImage = (props) => {
 
   useEffect(() => {
     switch (true) {
-      case router == "/dashboard":
-        setTransparent(false)
-        break
       case router == "/":
-        setTransparent(true)
+        setBlur(true)
+        break
+      default:
+        setBlur(false)
         break
     }
   }, [router])
@@ -111,7 +111,7 @@ export const CarouselImage = (props) => {
     <>
       <div
         className={
-          transparent
+          blur
             ? "not-blur absolute overflow-hidden top-0 w-full h-full block z-[-1] "
             : " blur-bg absolute overflow-hidden top-0 w-full h-full block z-[-1] "
         }

@@ -42,7 +42,7 @@ export default function Login() {
   }
   return (
     <motion.div
-      className={` top-0 left-0 flex flex-wrap items-center justify-center w-full h-full mx-auto `}
+      className={`relative-grid top-0 left-0 flex flex-wrap items-center justify-center w-full h-full mx-auto `}
       variants={Layout}
       initial="hidden"
       animate="visible"
@@ -52,7 +52,7 @@ export default function Login() {
       <div className="container flex flex-wrap mx-auto">
         <div className="flex-wrap block w-full   sm:pb-0 sm:w-7/12 md:w-6/12">
           <div className="w-full px-4 mx-auto ml-auto mr-auto text-center grid">
-            <div className="table w-full max-w-xs p-6 m-auto  bg-white border rounded shadow-lg">
+            <div className="table w-full max-w-xs p-6 m-auto  rounded ">
               <div className="mb-4">
                 <label
                   className="block mb-2 text-sm font-bold text-grey-darker"

@@ -48,14 +48,14 @@ export default function Dasboard() {
         animate="show"
         exit="exit"
         key={2}
-        className="relative  min-h-screen md:flex"
+        className="w-full relative-grid"
       >
         {/*<Sidebar />*/}
         <SideBar />
-        <div className="flex-1">
+        <div className="w-full">
           {/*<Navbar />*/}
           {/* Header */}
-          <div className="relative pt-12 pb-32 md:pt-32">
+          <div className="relative  w-full pt-12 pb-32 md:pt-32">
             <div className="w-full px-4 mx-auto md:px-10">
               <div>
                 {/* Card stats */}

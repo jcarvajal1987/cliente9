@@ -25,10 +25,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <CarouselImage />
       <NavBar router={router.pathname} />
-
-      <AnimatePresence>
-        <Component key={router.route} {...pageProps} />
-      </AnimatePresence>
+      <div className="flex-auto grid-content">
+        <AnimatePresence>
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
+      </div>
     </>
   )
 }

@@ -57,7 +57,7 @@ export default function LandingPage() {
       animate="show"
       exit="exit"
       key={1}
-      className="flex-auto"
+      className="relative-grid"
     >
       <Head>
         <title>kyo</title>
