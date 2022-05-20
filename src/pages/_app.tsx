@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 
 import { AnimatePresence } from "framer-motion"
 import { AppProps } from "next/app"
@@ -10,6 +10,12 @@ import { NavBar } from "@components/NavBar"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter()
+
+  const pTag = useRef()
+
+  //useLayoutEffect(() => {
+  //  console.log(pTag.current.getBoundingClientRect())
+  //}, [pTag])
 
   //useEffect(() => {
   //  console.log(router)
@@ -25,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <CarouselImage />
       <NavBar router={router.pathname} />
-      <div className="flex-auto grid-content">
+      <div ref={pTag} className="flex-auto  overflow-hidden grid-content">
         <AnimatePresence>
           <Component key={router.route} {...pageProps} />
         </AnimatePresence>

@@ -26,7 +26,7 @@ export const NavBar = (props) => {
       className={
         (transparent
           ? "relative z-50 w-full portrait-adjust"
-          : "relative w-full shadow-lg bg-white shadow-lg") +
+          : "relative w-full shadow-adjust bg-white ") +
         " flex flex-wrap items-center justify-between px-2 py-3 z-10"
       }
     >

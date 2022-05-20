@@ -1,7 +1,6 @@
 import React from "react"
 
 import { motion } from "framer-motion"
-import Head from "next/head"
 
 import { Carousel } from "./Carousel"
 
@@ -57,16 +56,16 @@ export default function LandingPage() {
       animate="show"
       exit="exit"
       key={1}
-      className="relative-grid"
+      className="relative-grid grid"
     >
-      <Head>
+      {/*<Head>
         <title>kyo</title>
         <meta name="description" content="kyood" />
         <meta itemProp="name" content="very" />
         <meta itemProp="description" content="hide" />
         <meta itemProp="image" content="gack" />
-      </Head>
-      <div className="relative h-full truncate w-full.">
+      </Head>*/}
+      <div className="relative  truncate w-full.">
         <Carousel
           titles={titles}
           descriptions={descriptions}

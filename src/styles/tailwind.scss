@@ -64,6 +64,19 @@ body {
   grid-row-start: 1;
 }
 
+.shadow-adjust{
+  box-shadow: 0px 0px 6px #cecdcd;
+}
+
+
+
+.menu-dashboard{
+  background-color: red;
+}
+.content-dashboard{
+  
+}
+
 @media screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 4/3) and (min-width: 640px)  { 
 
   .transition01 {
@@ -177,6 +190,15 @@ body {
 }
 @media screen  and (orientation: portrait) {
 
+  .container-dashboard{
+  
+    grid-template-rows: auto auto ;
+
+}
+.height-0{
+    height:0 ;
+}
+
   .portrait-adjust{
     box-shadow: 0px 0px 11px #0000004f;
     background-color: white;
@@ -196,7 +218,32 @@ body {
     align-items: flex-end;
   }
 }
+@media screen  and (max-width: 640px) and (orientation: landscape) { 
+
+  .container-dashboard{
+  
+    grid-template-rows: auto auto ;
+    
+  }
+  .height-0{
+    height:0 ;
+    
+  }
+}
 @media screen  and (min-width: 640px) and (orientation: landscape) { 
+
+  .container-dashboard{
+  
+    grid-template-columns: auto auto ;
+    
+  }
+  
+  .sidebar2{
+    position:relative;
+    --tw-translate-y: 0;
+    transform: var(--tw-transform);
+  }
+
   .bg-ui{
     background-color: transparent;
   }
