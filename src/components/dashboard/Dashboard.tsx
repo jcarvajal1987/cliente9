@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 import SideBar from "@components/SideBar"
 
-import { Content } from "./content"
+import { Content } from "./Content"
 
 export default function Dasboard() {
   const container = {
