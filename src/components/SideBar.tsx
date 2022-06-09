@@ -50,7 +50,7 @@ export default function SideBar() {
       <div
         className={
           (button ? "height-0" : "") +
-          " w-auto sidebar2 w-min overflow-hidden z-10  text-blue-100 w-64 space-y-6  px-2    transform   transition duration-200 ease-in-out"
+          " w-auto sidebar2 overflow-hidden z-10  text-blue-100 space-y-6  px-2    transform   transition duration-200 ease-in-out"
         }
       >
         <nav>

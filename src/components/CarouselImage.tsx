@@ -111,11 +111,11 @@ export const CarouselImage = (props) => {
     <>
       <div
         className={
-          blur
-            ? "not-blur absolute overflow-hidden top-0 w-full h-full block z-[-1] "
-            : " blur-bg absolute overflow-hidden top-0 w-full h-full block z-[-1] "
+          (blur ? "not-blur " : " blur-bg ") +
+          "absolute overflow-hidden top-0 w-full h-full block z-[-1]"
         }
-      >
+      ></div>
+      <div className="absolute top-0 block w-full h-full overflow-hidden z-[-2]">
         {images.map((img, index) => {
           return (
             <div

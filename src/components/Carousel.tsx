@@ -117,7 +117,7 @@ export const Carousel = (props) => {
           >
             <img
               style={{ width: 100 + "%", height: "auto" }}
-              className=""
+              className="algo"
               src="./layer-movil.svg"
             />
           </div>
