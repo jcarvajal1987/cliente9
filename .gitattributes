@@ -5,4 +5,4 @@
  *.js linguist-vendored eol=lf
  *.php eol=lf
  CHANGELOG.md export-ignore
- core.autocrlf=false
+ core.autocrlf=input
