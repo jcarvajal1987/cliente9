@@ -264,15 +264,20 @@ body {
   background-image: url(../../public/overlay-pattern-black.png)!important;
   background-color: rgba(103, 103, 103, 0.5);
   transition:  1s;
+  opacity: 1;
   
+  
+}
+.not-blur {
+  background-image: url(../../public/overlay-pattern-black.png)!important;
+  background-color: rgba(103, 103, 103, 0.5);
+  transition:  1s;
+  opacity: 0;
   
   
 }
 
-.not-blur {
-  
-  transition: 1s;
-}
+
 //.not-blur {
 //  background-image: url(../../public/overlay-pattern-white.png)!important;
 //  background-color: rgba(80, 57, 44, 0);
