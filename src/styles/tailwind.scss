@@ -270,10 +270,14 @@ body {
 }
 
 .not-blur {
-  background-image: url(../../public/overlay-pattern-white.png)!important;
-  background-color: rgba(80, 57, 44, 0);
+  
   transition: 1s;
 }
+//.not-blur {
+//  background-image: url(../../public/overlay-pattern-white.png)!important;
+//  background-color: rgba(80, 57, 44, 0);
+//  transition: 1s;
+//}
 //.blur-bg {
 //  filter: blur(8px);
 //  -webkit-filter: blur(8px);
