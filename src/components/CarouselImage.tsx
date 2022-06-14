@@ -10,6 +10,26 @@ export const CarouselImage = (props) => {
 
   const [index, setIndex] = useState(1)
 
+  const containerIn = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0,
+        staggerChildren: 0.2,
+        duration: 1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.09,
+        delay: 0,
+        duration: 0.3,
+      },
+    },
+  }
+
   const selectedImage = images[index]
 
   useEffect(() => {
@@ -19,7 +39,7 @@ export const CarouselImage = (props) => {
     return () => clearInterval(timer)
   }, [index])
 
-  //setInterval(() => {
+  // setInterval(() => {
   //  index === images.length ? setIndex(0) : setIndex(index + 1)
   //}, 5000)
 
@@ -74,36 +94,33 @@ export const CarouselImage = (props) => {
       opacity: 1,
       transition: {
         delay: 0,
-        delayChildren: 0,
-        staggerChildren: 0.3,
-        duration: 4,
+        duration: 0.5,
       },
     },
     exit: {
       opacity: 0,
       transition: {
         delay: 0,
-        staggerChildren: 0.2,
-        delayChildren: 2,
-        duration: 4,
+        duration: 1,
       },
     },
   }
 
-  const [blur, setBlur] = React.useState(true)
+  const [blur, setBlur] = React.useState(false)
 
   const ruta = useRouter()
 
   const router = ruta.pathname
 
   useEffect(() => {
-    switch (true) {
-      case router == "/":
-        setBlur(true)
-        break
-      default:
+    switch (router) {
+      case "/":
+        setBlur(false)
+      case "/login":
         setBlur(false)
         break
+      default:
+        setBlur(true)
     }
   }, [router])
 
@@ -111,11 +128,12 @@ export const CarouselImage = (props) => {
     <>
       <div
         className={
-          (blur ? "not-blur " : " blur-bg ") +
-          "absolute overflow-hidden top-0 w-full h-full block z-[-1]"
+          (blur ? "blur-bg" : "not-blur") +
+          " absolute overflow-hidden top-0 w-full h-full block z-[-4]"
         }
       ></div>
-      <div className="absolute top-0 block w-full h-full overflow-hidden z-[-2]">
+
+      <div className="absolute top-0 block w-full h-full overflow-hidden z-[-5]">
         {images.map((img, index) => {
           return (
             <div
