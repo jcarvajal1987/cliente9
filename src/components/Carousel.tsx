@@ -2,7 +2,7 @@ import React from "react"
 
 import { Subtitles } from "./landing/Subtitles"
 import { Titles } from "./landing/Titles"
-
+//kyo
 export const Carousel = (props) => {
   const sentence = {
     visible: {
