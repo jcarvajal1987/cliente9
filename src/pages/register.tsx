@@ -52,7 +52,7 @@ export default function Login() {
       <section className="items-center overflow-auto grid">
         <div className="container  mx-auto">
           <div className="flex justify-center   sm:pb-0 sm:w-7/12 md:w-6/12">
-            <div className="w-full max-w-xs p-6">
+            <form className="w-full max-w-xs p-6">
               <h1 className="block mb-2 text-xl font-bold text-grey-darker">
                 Register
               </h1>
@@ -105,7 +105,7 @@ export default function Login() {
                 <Link href="/dashboard">
                   <button
                     className="px-4 py-2 font-bold text-white bg-blue-700 rounded hover:bg-blue-dark"
-                    type="button"
+                    type="submit"
                   >
                     Sign In
                   </button>
@@ -117,7 +117,7 @@ export default function Login() {
                   Forgot Password?
                 </a>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

@@ -9,6 +9,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
+@import "./colors.scss";
+
+.juancho{
+  color:pink
+}
 
 #__next{
   display: flex;
@@ -29,6 +34,15 @@ body {
   right: 0;
   bottom: 0;
 }
+
+.bg-primary{
+  background-color: $primary;
+}
+
+.primary{
+  color: $primary;
+}
+
 
 .primary{
   color: #003e6f;

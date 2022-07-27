@@ -52,17 +52,17 @@ export default function Login() {
       <section className="items-center overflow-auto grid">
         <div className="container mx-auto">
           <div className="flex justify-center sm:pb-0 sm:w-7/12 md:w-6/12">
-            <div className="w-full max-w-xs p-6">
+            <form className="w-full max-w-xs p-6">
+              <h1 className="block mb-2 text-xl font-bold primary text-grey-darker">
+                Login <Link href="/register"> register</Link>
+              </h1>
               <div className="mb-4">
-                <h1 className="block mb-2 text-xl font-bold text-grey-darker">
-                  Login <Link href="/register"> register</Link>
-                </h1>
-                <label
+                {/*<label
                   className="block mb-2 text-sm font-bold text-grey-darker"
                   htmlFor="username"
                 >
                   Username
-                </label>
+                </label>*/}
                 <input
                   name="name"
                   type="text"
@@ -71,12 +71,12 @@ export default function Login() {
                 />
               </div>
               <div className="mb-6">
-                <label
+                {/*<label
                   className="block mb-2 text-sm font-bold text-grey-darker"
                   htmlFor="password"
                 >
                   Password
-                </label>
+                </label>*/}
                 <input
                   name="name"
                   type="email"
@@ -87,23 +87,33 @@ export default function Login() {
                   Please choose a password.
                 </p>
               </div>
-              <div className="flex items-center justify-between pb-8">
-                <Link href="/dashboard">
-                  <button
-                    className="px-4 py-2 font-bold text-white bg-blue-700 rounded hover:bg-blue-dark"
-                    type="button"
-                  >
-                    Sign In
-                  </button>
-                </Link>
+
+              <Link href="/dashboard">
+                <button
+                  className="w-full px-4 py-2  font-bold text-white bg-blue-700 rounded hover:bg-blue-dark"
+                  type="submit"
+                >
+                  Iniciar Sesión
+                </button>
+              </Link>
+
+              <div className="flex items-center justify-center py-2 mb-2 border-b  border-slate-300 ">
                 <a
-                  className="inline-block text-sm font-bold align-baseline text-blue hover:text-blue-darker"
+                  className="inline-block text-xs text-blue-700 align-baseline hover:text-blue-darker"
                   href="#"
                 >
-                  Forgot Password?
+                  Has olvidado la contraseña?
                 </a>
               </div>
-            </div>
+              <Link href="/dashboard">
+                <button
+                  className="w-full px-4 py-2  mb-10 text-white bg-green-500 rounded hover:bg-blue-dark"
+                  type="submit"
+                >
+                  Crear Nueva Cuenta
+                </button>
+              </Link>
+            </form>
           </div>
         </div>
       </section>
