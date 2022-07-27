@@ -65,7 +65,7 @@ export default function LandingPage() {
         <meta itemProp="description" content="hide" />
         <meta itemProp="image" content="gack" />
       </Head>*/}
-      <div className="relative  truncate w-full.">
+      <div className="relative grid  w-full.">
         <Carousel
           titles={titles}
           descriptions={descriptions}

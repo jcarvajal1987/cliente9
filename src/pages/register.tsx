@@ -50,13 +50,13 @@ export default function Login() {
       key={3}
     >
       <section className="items-center overflow-auto grid">
-        <div className="container mx-auto">
-          <div className="flex justify-center sm:pb-0 sm:w-7/12 md:w-6/12">
+        <div className="container  mx-auto">
+          <div className="flex justify-center   sm:pb-0 sm:w-7/12 md:w-6/12">
             <div className="w-full max-w-xs p-6">
+              <h1 className="block mb-2 text-xl font-bold text-grey-darker">
+                Register
+              </h1>
               <div className="mb-4">
-                <h1 className="block mb-2 text-xl font-bold text-grey-darker">
-                  Login <Link href="/register"> register</Link>
-                </h1>
                 <label
                   className="block mb-2 text-sm font-bold text-grey-darker"
                   htmlFor="username"
@@ -70,6 +70,21 @@ export default function Login() {
                   placeholder="Username"
                 />
               </div>
+
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-sm font-bold text-grey-darker"
+                  htmlFor="mail"
+                >
+                  Mail
+                </label>
+                <input
+                  name="mail"
+                  type="email"
+                  className="w-full px-3 py-2 border rounded shadow appearance-none text-grey-darker"
+                  placeholder="Correo electronico"
+                />
+              </div>
               <div className="mb-6">
                 <label
                   className="block mb-2 text-sm font-bold text-grey-darker"
@@ -78,10 +93,9 @@ export default function Login() {
                   Password
                 </label>
                 <input
-                  name="name"
-                  type="email"
-                  placeholder="******************"
-                  className="w-full px-3 py-2 border rounded shadow appearance-none text-grey-darker"
+                  type="password"
+                  className="w-full px-3 py-2 mb-3 border rounded shadow appearance-none border-red text-grey-darker"
+                  placeholder="contraseña"
                 />
                 <p className="text-xs italic text-red">
                   Please choose a password.

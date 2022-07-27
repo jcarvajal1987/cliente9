@@ -117,6 +117,7 @@ export const CarouselImage = (props) => {
       case "/":
         setBlur(false)
       case "/login":
+      case "/register":
         setBlur(false)
         break
       default:

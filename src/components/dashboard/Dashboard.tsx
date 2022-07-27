@@ -50,7 +50,7 @@ export default function Dasboard() {
         animate="show"
         exit="exit"
         key={2}
-        className="flex overflow-hidden relative-grid grid"
+        className="overflow-hidden relative-grid grid"
       >
         <div className="overflow-hidden grid container-dashboard">
           <div className="menu-dashboard">
