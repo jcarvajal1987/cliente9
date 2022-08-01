@@ -1,32 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Link from "next/link"
+import { useRouter } from "next/router"
 
+import useAuth from "@components/hooks/useAuth"
 import { useForm } from "@components/hooks/useForm"
+import { LoginApi } from "api/user"
 
 import { FormLayout } from "./FormLayout"
 
 const Login = () => {
+  const auth = useAuth()
+  console.log(auth)
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const { formState, onInputChange } = useForm({
-    email: "j",
-    password: "k",
+    identifier: "",
+    password: "",
   })
 
   //useEffect(() => {
   //  console.log(formState)
   //}, [formState])
 
-  const { email, password } = formState
+  const { identifier, password } = formState
 
-  const onSubmit = (event) => {
-    event.preventDefault(), console.log({ formState })
+  const onSubmit = async (event) => {
+    event.preventDefault(), setLoading(true)
+    console.log(formState)
+    const response = await LoginApi(formState)
+    setLoading(false)
+    if (response?.jwt) {
+      console.log("formulario paso")
+      router.push("./dashboard")
+    } else {
+      console.log("formulario error")
+    }
   }
   return (
     <>
       <FormLayout>
-        <form onSubmit={onSubmit} className="w-full max-w-xs p-6">
+        <form onSubmit={onSubmit} className="w-full max-w-md p-6">
           <h1 className="block mb-2 text-xl font-bold primary text-grey-darker">
-            Login<Link href="/register"> register</Link>
+            Login
           </h1>
           <div className="mb-4">
             {/*<label
@@ -36,10 +52,10 @@ const Login = () => {
                       Username
                     </label>*/}
             <input
-              name="email"
-              type="email"
+              name="identifier"
+              type="identifier"
               className="w-full px-3 py-2 border rounded shadow appearance-none text-grey-darker"
-              placeholder="Username"
+              placeholder="identifier"
               onChange={onInputChange}
             />
           </div>
@@ -64,7 +80,7 @@ const Login = () => {
             className="w-full px-4 py-2  font-bold text-white bg-blue-700 rounded hover:bg-blue-dark"
             type="submit"
           >
-            Iniciar Sesión
+            {loading ? <div>loading</div> : <h1>Iniciar Sesión</h1>}
           </button>
 
           <div className="flex items-center justify-center py-2 mb-2 border-b  border-slate-300 ">
@@ -76,12 +92,14 @@ const Login = () => {
             </a>
           </div>
 
-          <button
-            className="w-full px-4 py-2  mb-10 text-white bg-green-500 rounded hover:bg-blue-dark"
-            type="submit"
-          >
-            Crear Nueva Cuenta
-          </button>
+          <Link href="/register">
+            <button
+              className="w-full px-4 py-2  mb-10 text-white bg-green-500 rounded hover:bg-blue-dark"
+              type="submit"
+            >
+              Crear Nueva Cuenta
+            </button>
+          </Link>
         </form>
       </FormLayout>
     </>
