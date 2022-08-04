@@ -3,27 +3,40 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
+import { LoginApi } from "@api/user"
 import useAuth from "@components/hooks/useAuth"
 import { useForm } from "@components/hooks/useForm"
-import { LoginApi } from "api/user"
 
 import { FormLayout } from "./FormLayout"
 
-const Login = () => {
-  const auth = useAuth()
-  console.log(auth)
+const initialForm = {
+  identifier: "kakarotoroth@gmail.com",
+  password: "123456",
+}
+
+const formValidations = {
+  identifier: [(value) => value.includes("@"), "el correo deve tener un @"],
+  password: [
+    (value) => value.length >= 6,
+    "el password debe tener ,mas de 6 letras",
+  ],
+
+  //displayName: [(value) => value.length >= 1, "el nombre es requerido"],
+}
+
+export default function Login() {
+  const { auth, login } = useAuth()
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const { formState, onInputChange } = useForm({
-    identifier: "",
-    password: "",
-  })
+  const { formState, onInputChange, formValidation } = useForm(
+    initialForm,
+    formValidations
+  )
+  console.log(formValidation)
 
   //useEffect(() => {
   //  console.log(formState)
   //}, [formState])
-
-  const { identifier, password } = formState
 
   const onSubmit = async (event) => {
     event.preventDefault(), setLoading(true)
@@ -31,12 +44,14 @@ const Login = () => {
     const response = await LoginApi(formState)
     setLoading(false)
     if (response?.jwt) {
-      console.log("formulario paso")
+      login(response.jwt)
+
       router.push("./dashboard")
     } else {
       console.log("formulario error")
     }
   }
+  const resetPassword = () => {}
   return (
     <>
       <FormLayout>
@@ -86,7 +101,7 @@ const Login = () => {
           <div className="flex items-center justify-center py-2 mb-2 border-b  border-slate-300 ">
             <a
               className="inline-block text-xs text-blue-700 align-baseline hover:text-blue-darker"
-              href="#"
+              onClick={resetPassword}
             >
               Has olvidado la contraseña?
             </a>
@@ -105,5 +120,3 @@ const Login = () => {
     </>
   )
 }
-
-export default Login

@@ -1,26 +1,55 @@
-import React, { useMemo, useRef } from "react"
+import React, { useEffect, useMemo, useRef, useState } from "react"
 
 import { AnimatePresence } from "framer-motion"
+import { AppProps } from "next/app"
 
 import AuthContext from "../context/AuthContext"
 
-import { AppProps } from "next/app"
 import "../styles/tailwind.scss"
 import { useRouter } from "next/router"
 
 import { CarouselImage } from "@components/CarouselImage"
 import { NavBar } from "@components/NavBar"
 
+import jwtDecode from "jwt-decode"
+
+import { getToken, setToken } from "@api/token"
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const [auth, setAuth] = useState(undefined)
+  const [reloadUser, setReloadUser] = useState(false)
+  useEffect(() => {
+    const token = getToken()
+    if (token) {
+      setAuth({
+        token,
+        idUser: jwtDecode(token).id,
+      })
+    } else {
+      setAuth(null)
+    }
+    setReloadUser(false)
+  }, [reloadUser])
+
+  const login = (token) => {
+    setToken(token)
+
+    setAuth({
+      token,
+      idUser: jwtDecode(token).id,
+    })
+  }
+
   const authData = useMemo(
     () => ({
-      auth: { name: "kyo", email: "kyo@gmail.com" },
-      login: () => null,
+      auth,
+      login,
       logout: () => null,
-      setReloadUser: () => null,
+      setReloadUser,
     }),
-    []
+    [auth]
   )
+
   const router = useRouter()
   const pTag = useRef()
 
@@ -37,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   //    setTransparent(false)
   //  }
   //}, [router])
-
+  if (authData === undefined) return null
   return (
     <AuthContext.Provider value={authData}>
       <CarouselImage />

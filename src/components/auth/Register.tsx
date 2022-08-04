@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 
 import { useForm } from "@components/hooks/useForm"
 
-import { RegisterApi } from "../../../api/user"
+import { RegisterApi } from "../../api/user"
 import { FormLayout } from "./FormLayout"
 
 const Register = () => {

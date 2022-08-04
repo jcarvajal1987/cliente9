@@ -1,4 +1,4 @@
-import { BASE_PATH } from "../utils/constants"
+import { BASE_PATH } from "../../utils/constants"
 export async function RegisterApi(formState) {
   try {
     const url = BASE_PATH + `api/auth/local/register`
@@ -32,10 +32,8 @@ export async function LoginApi(formState) {
     }
     const response = await fetch(url, params)
     const result = await response.json()
-    console.log("kyo")
     return result
   } catch (error) {
-    console.log("kyo2")
     console.log(error)
     return null
   }
